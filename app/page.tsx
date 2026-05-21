@@ -1,9 +1,76 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { StatsSection } from "@/components/stats-counter";
+
+export const metadata: Metadata = {
+  title: "Freelance Web Developer in Pune, India | Growthentic",
+  description:
+    "Affordable, professional websites for Indian small businesses. Next.js & React. Delivered in 7–14 days. Get a free quote.",
+  alternates: { canonical: "https://growthentic.in" },
+  openGraph: {
+    url: "https://growthentic.in",
+    title: "Freelance Web Developer in Pune, India | Growthentic",
+    description:
+      "Affordable, professional websites for Indian small businesses. Next.js & React. Delivered in 7–14 days. Get a free quote.",
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Growthentic" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freelance Web Developer in Pune, India | Growthentic",
+    description:
+      "Affordable, professional websites for Indian small businesses. Next.js & React. Delivered in 7–14 days. Get a free quote.",
+    images: ["/og-default.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://growthentic.in/#business",
+      name: "Growthentic",
+      url: "https://growthentic.in",
+      logo: "https://growthentic.in/logo.png",
+      image: "https://growthentic.in/og-default.png",
+      description:
+        "Affordable, professional websites for Indian small businesses. Next.js & React. Delivered in 7–14 days.",
+      telephone: "+917972052896",
+      email: "hello@growthentic.in",
+      priceRange: "₹₹",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Baner",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "10:00",
+        closes: "20:00",
+      },
+      sameAs: ["https://instagram.com/growthentic.in"],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://growthentic.in/#founder",
+      name: "Prashant Kumar",
+      jobTitle: "Freelance Web Developer",
+      url: "https://growthentic.in",
+      worksFor: { "@id": "https://growthentic.in/#business" },
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSection />
       <MarqueeSection />
       <StatsSection />

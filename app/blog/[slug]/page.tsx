@@ -15,9 +15,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  const url = `https://growthentic.in/blog/${slug}`;
   return {
-    title: `${post.title} | Growthentic Blog`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: ["Prashant Kumar"],
+      images: [{ url: "/og-default.png", width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: ["/og-default.png"],
+    },
   };
 }
 

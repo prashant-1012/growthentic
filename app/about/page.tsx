@@ -9,6 +9,21 @@ export const metadata: Metadata = {
   title: "About Growthentic | Freelance Web Studio, Pune India",
   description:
     "Meet the team behind Growthentic — a freelance web studio helping Indian small businesses grow online.",
+  alternates: { canonical: "https://growthentic.in/about" },
+  openGraph: {
+    url: "https://growthentic.in/about",
+    title: "About Growthentic | Freelance Web Studio, Pune India",
+    description:
+      "Meet the team behind Growthentic — a freelance web studio helping Indian small businesses grow online.",
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "About Growthentic" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Growthentic | Freelance Web Studio, Pune India",
+    description:
+      "Meet the team behind Growthentic — a freelance web studio helping Indian small businesses grow online.",
+    images: ["/og-default.png"],
+  },
 };
 
 export default function AboutPage() {
