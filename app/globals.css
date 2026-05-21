@@ -9,7 +9,7 @@
   /* Fonts */
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-syne);
+  --font-heading: var(--font-plus-jakarta);
 
   /* Colors mapped from CSS vars */
   --color-background: var(--background);
@@ -163,7 +163,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-syne), var(--font-dm-sans), sans-serif;
+    font-family: var(--font-plus-jakarta), var(--font-dm-sans), sans-serif;
     @apply font-bold tracking-tight;
   }
 }
@@ -239,6 +239,15 @@
   }
   .animate-marquee-slow {
     animation: marquee 50s linear infinite;
+  }
+
+  /* Slow pulse for hero background blobs */
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.08); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
   }
 
   /* Floating animation */

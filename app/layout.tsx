@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
@@ -41,7 +42,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${syne.variable} ${dmSans.variable} ${geistMono.variable} h-full`}
+      className={`${plusJakartaSans.variable} ${dmSans.variable} ${geistMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider
@@ -55,6 +56,7 @@ export default function RootLayout({
           <div className="flex flex-col flex-1 pt-16">
             {children}
           </div>
+          <Footer />
           <WhatsAppButton />
         </ThemeProvider>
       </body>
