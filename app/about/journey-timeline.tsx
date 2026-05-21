@@ -21,7 +21,7 @@ const milestones = [
     ),
   },
   {
-    year: "2025",
+    year: "2026",
     title: "Growthentic Launches",
     body: "Growthentic officially launched as a studio brand — a name, an identity, and a promise to small businesses across India.",
     icon: (
