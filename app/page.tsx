@@ -13,6 +13,7 @@ export default function Home() {
       <OurProcessSection />
       <WhyGrowthentic />
       <TechStackSection />
+      <TestimonialsSection />
     </main>
   );
 }
@@ -1285,6 +1286,185 @@ function TechStackSection() {
               </span>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Section 10: Testimonials ── */
+const testimonials = [
+  {
+    name: "Priya Sharma",
+    business: "The Glow Room",
+    type: "Beauty Salon, Delhi",
+    rating: 5,
+    avatar: "PS",
+    avatarBg: "from-pink-400 to-rose-500",
+    review:
+      "Prashant delivered our new salon website in just 10 days — it looks absolutely stunning on every device. Our Instagram followers actually ask about the website now! The booking form alone has saved us hours every week. Highly recommend.",
+  },
+  {
+    name: "Dr. Ankit Mehta",
+    business: "Mehta Dental & Implant Clinic",
+    type: "Dental Clinic, Pune",
+    rating: 5,
+    avatar: "AM",
+    avatarBg: "from-blue-400 to-indigo-500",
+    review:
+      "We needed a website that matched the premium feel of our clinic. Growthentic nailed it — the design is clean, the animations are smooth, and patients keep complimenting us on it. Response time during the project was excellent, never felt left in the dark.",
+  },
+  {
+    name: "Sunita Bose",
+    business: "La Petite Boutique",
+    type: "Fashion Boutique, Kolkata",
+    rating: 4.9,
+    avatar: "SB",
+    avatarBg: "from-amber-400 to-orange-500",
+    review:
+      "Very professional from start to finish. He understood what our brand needed even when we weren't sure ourselves. The website launched on time and within budget. Our online enquiries have gone up noticeably since launch.",
+  },
+];
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <svg
+          key={star}
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill={star <= Math.floor(rating) ? "currentColor" : "none"}
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="text-brand"
+          aria-hidden="true"
+        >
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ))}
+      <span className="ml-1.5 text-xs font-semibold text-brand">{rating}</span>
+    </div>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section
+      aria-labelledby="testimonials-heading"
+      className="py-20 md:py-28 bg-background relative overflow-hidden"
+    >
+      {/* Decorative quote mark */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 text-[220px] font-serif leading-none text-brand/4 select-none"
+      >
+        &ldquo;
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+        {/* Heading */}
+        <div className="mb-14 flex flex-col items-center gap-4 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
+            Client Reviews
+          </span>
+          <h2
+            id="testimonials-heading"
+            className="font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl"
+          >
+            What Our Clients{" "}
+            <span className="text-brand">Actually Say</span>
+          </h2>
+          <p className="max-w-xl text-base text-muted-foreground leading-relaxed">
+            Real feedback from real business owners — no filters, no fluff.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <figure
+              key={t.name}
+              className={`group relative flex flex-col gap-5 rounded-2xl border border-border bg-card p-7 hover-lift hover:border-brand/20 transition-colors overflow-hidden ${i === 1 ? "lg:translate-y-4" : ""}`}
+            >
+              {/* Hover glow */}
+              <div aria-hidden="true" className="absolute inset-0 rounded-2xl bg-brand/0 group-hover:bg-brand/[0.025] transition-colors duration-300" />
+
+              {/* Top: rating + opening quote */}
+              <div className="relative flex items-start justify-between">
+                <StarRating rating={t.rating} />
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="text-brand/15 flex-shrink-0"
+                  aria-hidden="true"
+                >
+                  <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.956.76-3.022.66-1.065 1.515-1.867 2.558-2.403L9.373 5c-.8.396-1.56.898-2.26 1.505-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69-.346 2.04-.217 3.1c.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.94.09-1.95.75-3.02.66-1.06 1.514-1.86 2.557-2.4L18.49 5c-.8.396-1.555.898-2.26 1.505-.708.607-1.34 1.305-1.894 2.094-.556.79-.97 1.68-1.24 2.69-.273 1-.345 2.04-.217 3.1.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003z" />
+                </svg>
+              </div>
+
+              {/* Review text */}
+              <blockquote className="relative flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  &ldquo;{t.review}&rdquo;
+                </p>
+              </blockquote>
+
+              {/* Divider */}
+              <div className="relative h-px w-full bg-border group-hover:bg-brand/20 transition-colors" />
+
+              {/* Client info */}
+              <figcaption className="relative flex items-center gap-3">
+                {/* Avatar */}
+                <div
+                  className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${t.avatarBg} text-xs font-bold text-white shadow-sm`}
+                  aria-hidden="true"
+                >
+                  {t.avatar}
+                </div>
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <span className="text-sm font-bold text-foreground truncate">
+                    {t.name}
+                  </span>
+                  <span className="text-xs text-brand font-medium truncate">
+                    {t.business}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground truncate">
+                    {t.type}
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        {/* Bottom row: aggregate rating + CTA */}
+        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+          {/* Aggregate rating badge */}
+          <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-3 shadow-sm">
+            <div className="flex items-center gap-0.5">
+              {[1, 2, 3, 4, 5].map((s) => (
+                <svg key={s} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-brand" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-bold text-foreground leading-tight">4.9 / 5.0</span>
+              <span className="text-[10px] text-muted-foreground">Average client rating</span>
+            </div>
+          </div>
+
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:border-brand/40 hover:text-brand transition-colors shadow-sm"
+          >
+            Read All Reviews
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </Link>
         </div>
       </div>
     </section>
