@@ -46,7 +46,7 @@ export function ContactForm() {
         <div
           role="status"
           aria-live="polite"
-          className="fixed bottom-6 right-6 z-50 flex items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-2xl max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300"
+          className="fixed bottom-4 left-4 right-4 z-50 flex items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-2xl sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300"
         >
           <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-500">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>

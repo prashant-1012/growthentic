@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FadeInObserver } from "@/components/fade-in";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -72,6 +73,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <FadeInObserver />
           <Navbar />
           {/* pt-16 clears the fixed navbar height (64px) */}
           <div className="flex flex-col flex-1 pt-16">

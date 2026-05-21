@@ -20,7 +20,7 @@ export function TechStackGrid() {
       aria-labelledby="tech-stack-heading"
       className="py-20 md:py-28 mx-auto w-full max-w-7xl px-5 md:px-8"
     >
-      <div className="mb-14 flex flex-col items-center gap-4 text-center">
+      <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
           Tech Stack
         </span>
@@ -36,7 +36,7 @@ export function TechStackGrid() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
+      <div className="grid grid-cols-2 gap-4 min-[480px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
         {stack.map((tech) => (
           <div
             key={tech.name}

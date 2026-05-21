@@ -49,7 +49,7 @@ export function JourneyTimeline() {
       aria-labelledby="journey-heading"
       className="py-20 md:py-28 mx-auto w-full max-w-7xl px-5 md:px-8"
     >
-      <div className="mb-14 flex flex-col items-center gap-4 text-center">
+      <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
           Our Journey
         </span>
@@ -104,7 +104,7 @@ export function JourneyTimeline() {
       </div>
 
       {/* Mobile: vertical */}
-      <div className="flex flex-col gap-0 lg:hidden">
+      <div className="flex flex-col lg:hidden">
         {milestones.map((m, i) => (
           <div key={m.year} className="group flex gap-5">
             {/* Line + node column */}

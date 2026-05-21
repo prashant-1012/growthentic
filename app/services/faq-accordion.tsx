@@ -38,7 +38,7 @@ export function FaqAccordion() {
       className="py-20 md:py-28 mx-auto w-full max-w-3xl px-5 md:px-8"
     >
       {/* Heading */}
-      <div className="mb-12 flex flex-col items-center gap-4 text-center">
+      <div data-fade className="mb-12 flex flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
           FAQ
         </span>

@@ -409,7 +409,7 @@ function ServicePreviewSection() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
 
         {/* Heading */}
-        <div className="mb-12 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-12 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             What We Build
           </span>
@@ -607,7 +607,7 @@ function WhatWeOfferSection() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
-        <div className="mb-14 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             Why Clients Choose Us
           </span>
@@ -762,7 +762,7 @@ function FeaturedWorkSection() {
     <section aria-labelledby="featured-work-heading" className="py-20 md:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
-        <div className="mb-14 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             Our Work
           </span>
@@ -937,7 +937,7 @@ function OurProcessSection() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
-        <div className="mb-16 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-16 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             How It Works
           </span>
@@ -1433,7 +1433,7 @@ function TestimonialsSection() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
-        <div className="mb-14 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             Client Reviews
           </span>

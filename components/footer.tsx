@@ -36,7 +36,7 @@ export function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         {/* Main footer grid */}
-        <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1 flex flex-col gap-5">
             <Link

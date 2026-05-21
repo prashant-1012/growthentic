@@ -146,11 +146,11 @@ export default async function BlogPostPage({ params }: Props) {
             if (section.type === "table" && section.headers && section.rows) {
               return (
                 <div key={i} className="overflow-x-auto rounded-xl border border-border">
-                  <table className="w-full text-sm">
+                  <table className="w-full min-w-[480px] text-sm">
                     <thead className="bg-muted/50">
                       <tr>
                         {section.headers.map((h) => (
-                          <th key={h} className="px-4 py-3 text-left font-semibold text-foreground whitespace-nowrap">
+                          <th key={h} className="px-4 py-3 text-left font-semibold text-foreground">
                             {h}
                           </th>
                         ))}

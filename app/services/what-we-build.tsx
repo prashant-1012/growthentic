@@ -63,7 +63,7 @@ export function WhatWeBuild() {
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
-        <div className="mb-14 flex flex-col items-center gap-4 text-center">
+        <div data-fade className="mb-14 flex flex-col items-center gap-4 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
             What We Build
           </span>
