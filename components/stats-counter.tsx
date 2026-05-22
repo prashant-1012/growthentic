@@ -11,7 +11,7 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 2,   suffix: "+",   label: "Live Projects",      description: "Real websites live and growing" },
+  { value: 5,   suffix: "+",   label: "Projects Shipped",   description: "Real websites live and growing" },
   { value: 100, suffix: "%",   label: "On-Time Delivery",   description: "Every project, delivered as promised" },
   { value: 14,  suffix: " Days", prefix: "7–", label: "Avg. Turnaround", description: "From kickoff to launch-ready" },
   { value: 4.9, suffix: "★",   label: "Client Rating",      description: "Across all completed projects" },

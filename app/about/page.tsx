@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { TechStackGrid } from "./tech-stack-grid";
 import { ValuesSection } from "./values-section";
@@ -145,9 +146,13 @@ function StorySection() {
 
             {/* Founder sig */}
             <div className="flex items-center gap-4 pt-2">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand/15 text-brand font-heading font-extrabold text-lg select-none">
-                PK
-              </div>
+              <Image
+                src="/portfolio_img.jpg"
+                alt="Prashant Kumar"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover object-top ring-2 ring-brand/30"
+              />
               <div>
                 <p className="font-heading font-bold text-foreground">Prashant Kumar</p>
                 <p className="text-sm text-muted-foreground">Founder, Growthentic · Pune, India</p>
@@ -163,50 +168,62 @@ function StorySection() {
             </Link>
           </div>
 
-          {/* Right — decorative card */}
+          {/* Right — photo + stats */}
           <div className="relative flex items-center justify-center">
-            {/* Ambient glow behind card */}
-            <div aria-hidden="true" className="absolute h-72 w-72 rounded-full bg-brand/10 blur-[80px]" />
+            {/* Ambient glow */}
+            <div aria-hidden="true" className="absolute h-80 w-80 rounded-full bg-brand/12 blur-[90px]" />
 
-            <div className="relative w-full max-w-sm rounded-2xl border border-border bg-card p-8 shadow-xl">
-              {/* Quote mark */}
-              <svg
-                className="mb-4 h-8 w-8 text-brand/40"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
+            <div className="relative w-full max-w-sm">
+              {/* Photo frame */}
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[4/5]">
+                <Image
+                  src="/portfolio_img.jpg"
+                  alt="Prashant Kumar — Founder, Growthentic"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+                {/* Subtle gradient at bottom for card legibility */}
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent" />
 
-              <p className="text-base text-foreground leading-relaxed font-medium mb-6">
-                "A great website isn't just about looks. It's about what it does for your
-                business — more enquiries, more visibility, more revenue."
-              </p>
-
-              <div className="flex items-center gap-3 border-t border-border pt-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/15 text-brand font-heading font-extrabold text-sm select-none">
-                  PK
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">Prashant Kumar</p>
-                  <p className="text-xs text-muted-foreground">Growthentic, Pune</p>
+                {/* Floating name tag at bottom */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
+                  <div className="flex flex-col">
+                    <span className="font-heading text-sm font-bold text-white">Prashant Kumar</span>
+                    <span className="text-xs text-white/70">Founder, Growthentic · Pune, India</span>
+                  </div>
+                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-brand/90 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                    Available
+                  </span>
                 </div>
               </div>
 
-              {/* Stats inside card */}
-              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-5">
-                {[
-                  { value: "2+", label: "Live Projects" },
-                  { value: "100%", label: "On-Time Delivery" },
-                  { value: "4.9★", label: "Client Rating" },
-                  { value: "2 hrs", label: "Avg. Response" },
-                ].map((s) => (
-                  <div key={s.label} className="flex flex-col gap-0.5">
-                    <span className="font-heading text-xl font-extrabold text-brand">{s.value}</span>
-                    <span className="text-xs text-muted-foreground">{s.label}</span>
-                  </div>
-                ))}
+              {/* Stats card overlapping bottom-right */}
+              <div className="absolute -bottom-6 -right-10 w-52 rounded-2xl border border-border bg-card/95 backdrop-blur-sm p-4 shadow-xl">
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { value: "5+", label: "Projects" },
+                    { value: "100%", label: "On-Time" },
+                    { value: "4.9★", label: "Rating" },
+                    { value: "2 hrs", label: "Response" },
+                  ].map((s) => (
+                    <div key={s.label} className="flex flex-col gap-0.5">
+                      <span className="font-heading text-lg font-extrabold text-brand leading-none">{s.value}</span>
+                      <span className="text-[11px] text-muted-foreground">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quote card overlapping top-left */}
+              <div className="absolute -top-5 -left-16 w-48 rounded-xl border border-border bg-card/95 backdrop-blur-sm p-3.5 shadow-lg">
+                <svg className="mb-2 h-5 w-5 text-brand/50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  "Every project gets the best of what's possible today."
+                </p>
               </div>
             </div>
           </div>
