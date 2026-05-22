@@ -33,7 +33,7 @@ export default function WorkPage() {
 
       {/* ── Divider ── */}
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
-        <div className="relative my-4 flex items-center gap-4">
+        <div className="relative my-8 flex items-center gap-4">
           <div className="flex-1 h-px bg-border" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/50 whitespace-nowrap">
             Also Built
