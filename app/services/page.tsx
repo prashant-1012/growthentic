@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     title: "Web Design & Development Services + Pricing | Growthentic",
     description:
       "Explore our services: business websites, landing pages, e-commerce, and more. Transparent pricing starting from ₹4,000.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Growthentic Services" }],
+    images: [{ url: "/ogImage.jpeg", width: 1200, height: 630, alt: "Growthentic Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Web Design & Development Services + Pricing | Growthentic",
     description:
       "Explore our services: business websites, landing pages, e-commerce, and more. Transparent pricing starting from ₹4,000.",
-    images: ["/og-default.png"],
+    images: ["/ogImage.jpeg"],
   },
 };
 

@@ -1,6 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+const PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+type Status = "idle" | "loading" | "success" | "error";
 
 type FormState = {
   name: string;
@@ -23,25 +30,55 @@ const empty: FormState = {
 };
 
 export function ContactForm() {
-  const [form, setForm] = useState<FormState>(empty);
-  const [submitted, setSubmitted] = useState(false);
-  const [toast, setToast] = useState(false);
+  const [form, setForm]     = useState<FormState>(empty);
+  const [status, setStatus] = useState<Status>("idle");
+  const [toast, setToast]   = useState(false);
 
   function set(key: keyof FormState, value: string) {
     setForm((f) => ({ ...f, [key]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
-    setToast(true);
-    setForm(empty);
-    setTimeout(() => setToast(false), 5000);
+    setStatus("loading");
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name:          form.name,
+          email:         form.email,
+          whatsapp:      form.whatsapp,
+          business_type: form.businessType,
+          service:       form.service,
+          budget:        form.budget,
+          message:       form.details,
+          title:         "Growthentic Enquiry",
+          time:          new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        },
+        PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus("success");
+        setForm(empty);
+        setToast(true);
+        setTimeout(() => {
+          setToast(false);
+          setStatus("idle");
+        }, 5000);
+      })
+      .catch(() => {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      });
   }
+
+  const isLoading = status === "loading";
 
   return (
     <div className="relative">
-      {/* Toast */}
+      {/* Toast — success */}
       {toast && (
         <div
           role="status"
@@ -82,20 +119,24 @@ export function ContactForm() {
           <Field label="Full Name" required>
             <input
               type="text"
+              name="name"
               placeholder="Priya Sharma"
               value={form.name}
               onChange={(e) => set("name", e.target.value)}
               required
+              disabled={isLoading}
               className={inputCls}
             />
           </Field>
           <Field label="Email Address" required>
             <input
               type="email"
+              name="email"
               placeholder="you@example.com"
               value={form.email}
               onChange={(e) => set("email", e.target.value)}
               required
+              disabled={isLoading}
               className={inputCls}
             />
           </Field>
@@ -106,18 +147,22 @@ export function ContactForm() {
           <Field label="WhatsApp Number" required>
             <input
               type="tel"
+              name="whatsapp"
               placeholder="+91 98765 43210"
               value={form.whatsapp}
               onChange={(e) => set("whatsapp", e.target.value)}
               required
+              disabled={isLoading}
               className={inputCls}
             />
           </Field>
           <Field label="Business Type" required>
             <select
+              name="businessType"
               value={form.businessType}
               onChange={(e) => set("businessType", e.target.value)}
               required
+              disabled={isLoading}
               className={selectCls(form.businessType)}
             >
               <option value="" disabled>Select…</option>
@@ -132,9 +177,11 @@ export function ContactForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Service Interested In" required>
             <select
+              name="service"
               value={form.service}
               onChange={(e) => set("service", e.target.value)}
               required
+              disabled={isLoading}
               className={selectCls(form.service)}
             >
               <option value="" disabled>Select…</option>
@@ -152,9 +199,11 @@ export function ContactForm() {
           </Field>
           <Field label="Budget Range" required>
             <select
+              name="budget"
               value={form.budget}
               onChange={(e) => set("budget", e.target.value)}
               required
+              disabled={isLoading}
               className={selectCls(form.budget)}
             >
               <option value="" disabled>Select…</option>
@@ -174,27 +223,40 @@ export function ContactForm() {
         <Field label="Project Details">
           <textarea
             rows={4}
+            name="details"
             placeholder="Tell us about your project — what you do, what you need, any inspiration or references…"
             value={form.details}
             onChange={(e) => set("details", e.target.value)}
+            disabled={isLoading}
             className={`${inputCls} resize-none`}
           />
         </Field>
 
+        {/* Error message */}
+        {status === "error" && (
+          <p className="text-sm text-red-500 font-medium text-center">
+            Something went wrong — please try again or WhatsApp us directly.
+          </p>
+        )}
+
         {/* Submit */}
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground transition-all hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
+          disabled={isLoading}
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground transition-all hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
         >
-          Send My Request
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          {isLoading ? (
+            <>
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>
+              Sending…
+            </>
+          ) : (
+            <>
+              Send My Request
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </>
+          )}
         </button>
-
-        {submitted && !toast && (
-          <p className="text-sm text-emerald-600 dark:text-emerald-400 font-medium text-center">
-            ✓ Request received — we&apos;ll WhatsApp you within 2 hours!
-          </p>
-        )}
       </form>
     </div>
   );
@@ -221,7 +283,7 @@ function Field({
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20";
+  "w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20 disabled:opacity-50 disabled:cursor-not-allowed";
 
 const selectCls = (val: string) =>
   `${inputCls} ${val ? "text-foreground" : "text-muted-foreground/60"} cursor-pointer`;

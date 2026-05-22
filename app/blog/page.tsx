@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     title: "Blog — Web Tips for Small Business Owners | Growthentic",
     description:
       "Honest, practical web advice for Indian small business owners. Guides on pricing, platforms, and online growth.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Growthentic Blog" }],
+    images: [{ url: "/ogImage.jpeg", width: 1200, height: 630, alt: "Growthentic Blog" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog — Web Tips for Small Business Owners | Growthentic",
     description:
       "Honest, practical web advice for Indian small business owners. Guides on pricing, platforms, and online growth.",
-    images: ["/og-default.png"],
+    images: ["/ogImage.jpeg"],
   },
 };
 

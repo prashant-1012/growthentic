@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Portfolio | Web Projects for Indian Businesses | Growthentic",
     description:
       "See how we've helped Indian small businesses launch stunning, high-performance websites.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Growthentic Portfolio" }],
+    images: [{ url: "/ogImage.jpeg", width: 1200, height: 630, alt: "Growthentic Portfolio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | Web Projects for Indian Businesses | Growthentic",
     description: "See how we've helped Indian small businesses launch stunning, high-performance websites.",
-    images: ["/og-default.png"],
+    images: ["/ogImage.jpeg"],
   },
 };
 

@@ -152,7 +152,7 @@ export function Footer() {
               </a>
 
               <a
-                href="mailto:hello@growthentic.in"
+                href="mailto:prashant2009kr@gmail.com"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-brand transition-colors group"
                 aria-label="Send email"
               >

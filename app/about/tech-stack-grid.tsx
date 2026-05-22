@@ -1,17 +1,39 @@
-const stack = [
-  { name: "HTML5", color: "#E34F26", initial: "H5" },
-  { name: "CSS3", color: "#1572B6", initial: "CS" },
-  { name: "JavaScript", color: "#F7DF1E", initial: "JS", dark: true },
-  { name: "TypeScript", color: "#3178C6", initial: "TS" },
-  { name: "React", color: "#61DAFB", initial: "Re", dark: true },
-  { name: "Next.js", color: "#888", initial: "Nx" },
-  { name: "Tailwind CSS", color: "#06B6D4", initial: "TW" },
-  { name: "Node.js", color: "#339933", initial: "No" },
-  { name: "MongoDB", color: "#47A248", initial: "Mg" },
-  { name: "WordPress", color: "#21759B", initial: "WP" },
-  { name: "Shopify", color: "#96BF48", initial: "Sh" },
-  { name: "Git", color: "#F05032", initial: "Gt" },
-  { name: "Vercel", color: "#888", initial: "Vc" },
+import {
+  siHtml5,
+  siCss,
+  siJavascript,
+  siTypescript,
+  siReact,
+  siNextdotjs,
+  siTailwindcss,
+  siNodedotjs,
+  siMongodb,
+  siWordpress,
+  siShopify,
+  siGit,
+  siVercel,
+} from "simple-icons";
+
+interface Tech {
+  name: string;
+  icon: { path: string; hex: string };
+  colorOverride?: string;
+}
+
+const stack: Tech[] = [
+  { name: "HTML5",        icon: siHtml5 },
+  { name: "CSS3",         icon: siCss },
+  { name: "JavaScript",   icon: siJavascript },
+  { name: "TypeScript",   icon: siTypescript },
+  { name: "React",        icon: siReact },
+  { name: "Next.js",      icon: siNextdotjs,    colorOverride: "#888888" },
+  { name: "Tailwind CSS", icon: siTailwindcss },
+  { name: "Node.js",      icon: siNodedotjs },
+  { name: "MongoDB",      icon: siMongodb },
+  { name: "WordPress",    icon: siWordpress },
+  { name: "Shopify",      icon: siShopify },
+  { name: "Git",          icon: siGit },
+  { name: "Vercel",       icon: siVercel,        colorOverride: "#888888" },
 ];
 
 export function TechStackGrid() {
@@ -37,28 +59,37 @@ export function TechStackGrid() {
       </div>
 
       <div className="grid grid-cols-2 gap-4 min-[480px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
-        {stack.map((tech) => (
-          <div
-            key={tech.name}
-            title={tech.name}
-            className="group flex flex-col items-center gap-2.5 rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-md cursor-default"
-          >
-            {/* Colour swatch avatar */}
+        {stack.map((tech) => {
+          const color = `#${tech.colorOverride ? tech.colorOverride.replace("#", "") : tech.icon.hex}`;
+          return (
             <div
-              className="flex h-10 w-10 items-center justify-center rounded-xl text-xs font-bold transition-transform duration-200 group-hover:scale-110"
-              style={{
-                backgroundColor: `${tech.color}22`,
-                color: tech.color,
-                border: `1.5px solid ${tech.color}44`,
-              }}
+              key={tech.name}
+              title={tech.name}
+              className="group flex flex-col items-center gap-2.5 rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-md cursor-default"
             >
-              {tech.initial}
+              <div
+                className="flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-110"
+                style={{
+                  backgroundColor: `${color}22`,
+                  border: `1.5px solid ${color}44`,
+                }}
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  style={{ fill: color }}
+                  aria-label={tech.name}
+                >
+                  <path d={tech.icon.path} />
+                </svg>
+              </div>
+              <span className="text-center text-[11px] font-medium text-muted-foreground leading-tight group-hover:text-foreground transition-colors">
+                {tech.name}
+              </span>
             </div>
-            <span className="text-center text-[11px] font-medium text-muted-foreground leading-tight group-hover:text-foreground transition-colors">
-              {tech.name}
-            </span>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
