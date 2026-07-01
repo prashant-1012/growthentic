@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppIcon } from "@/components/navbar";
 
@@ -224,19 +225,13 @@ export function Footer() {
 
 function FooterLogoIcon() {
   return (
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect width="28" height="28" rx="7" fill="currentColor" className="text-brand" />
-      <path d="M8 19 L14 9 L20 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10.5 15.5 H17.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="20" cy="10" r="2.5" fill="white" />
-    </svg>
+    <Image
+      src="/logo.png"
+      alt=""
+      width={26}
+      height={26}
+      className="h-[26px] w-[26px] object-contain"
+    />
   );
 }
 

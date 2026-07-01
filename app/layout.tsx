@@ -83,7 +83,9 @@ export default function RootLayout({
           <WhatsAppButton />
         </ThemeProvider>
 
-        <GoogleAnalytics gaId="G-BL7GEV4871" />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
