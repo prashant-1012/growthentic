@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { FadeInObserver } from "@/components/fade-in";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -81,6 +82,8 @@ export default function RootLayout({
           <Footer />
           <WhatsAppButton />
         </ThemeProvider>
+
+        <GoogleAnalytics gaId="G-BL7GEV4871" />
       </body>
     </html>
   );
