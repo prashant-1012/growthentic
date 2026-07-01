@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "./contact-form";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 
 export const metadata: Metadata = {
   title: "Get a Free Website Quote | Contact Growthentic",
@@ -70,10 +71,9 @@ function ContactSidebar() {
   return (
     <aside className="flex flex-col gap-5 lg:sticky lg:top-24">
       {/* WhatsApp card */}
-      <a
-        href="https://wa.me/917972052896"
-        target="_blank"
-        rel="noopener noreferrer"
+      <WhatsAppLink
+        buttonLocation="contact_sidebar"
+        buttonText="Chat on WhatsApp"
         className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-brand/40 hover:shadow-md"
       >
         <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366]">
@@ -84,7 +84,7 @@ function ContactSidebar() {
           <p className="text-xs text-muted-foreground">+91 7972052896</p>
         </div>
         <svg className="ml-auto text-muted-foreground group-hover:text-brand transition-colors" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-      </a>
+      </WhatsAppLink>
 
       {/* Contact details card */}
       <div className="rounded-2xl border border-border bg-card p-5 flex flex-col gap-4">

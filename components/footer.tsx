@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppIcon } from "@/components/navbar";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -139,10 +140,9 @@ export function Footer() {
             </h3>
 
             <div className="flex flex-col gap-3">
-              <a
-                href="https://wa.me/917972052896"
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                buttonLocation="footer_contact_info"
+                buttonText="+91 79720 52896"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-brand transition-colors group"
                 aria-label="Chat on WhatsApp"
               >
@@ -150,7 +150,7 @@ export function Footer() {
                   <WhatsAppIcon size={15} />
                 </span>
                 +91 79720 52896
-              </a>
+              </WhatsAppLink>
 
               <a
                 href="mailto:prashant2009kr@gmail.com"
@@ -179,16 +179,15 @@ export function Footer() {
             </div>
 
             {/* WhatsApp CTA */}
-            <a
-              href="https://wa.me/917972052896"
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              buttonLocation="footer_cta"
+              buttonText="Chat on WhatsApp"
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90 hover:scale-105 active:scale-95 transition-all shadow-sm"
               aria-label="Chat with us on WhatsApp"
             >
               <WhatsAppIcon size={16} />
               Chat on WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
