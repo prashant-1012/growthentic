@@ -10,7 +10,7 @@ interface ClientProject {
   accentColor: string;
   gradient: string;
   darkBg: string;
-  mockupType: "dental" | "salon";
+  mockupType: "dental" | "salon" | "spice";
   liveUrl: string;
   stack: string[];
   problem: string;
@@ -82,6 +82,31 @@ const clientProjects: ClientProject[] = [
       "8-page layout — Home, Services, Team, Gallery, Pricing, Blog, Booking, Contact",
       "Multi-step booking form",
       "Service menu with pricing & team profiles",
+    ],
+  },
+  {
+    name: "Malabar Reserve",
+    type: "Premium Spice Export Website",
+    industry: "Food & Export",
+    accentColor: "#C9A227",
+    gradient: "from-amber-600/20 via-yellow-600/10 to-emerald-900/5",
+    darkBg: "#0f1a12",
+    mockupType: "spice",
+    liveUrl: "https://www.malabarreserve.co/",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    problem:
+      "Malabar Reserve exports GI-tagged Indian spices worldwide, but had no online presence that matched that credibility — international buyers had no way to verify sourcing standards or request a quote without a trade fair or a PDF catalogue.",
+    solution:
+      "Built a full export-focused website with a heritage-driven brand story, a dedicated showcase for their three core spices, a 4-step export process breakdown, and an industries-served segmentation targeting importers, distributors, and private-label buyers.",
+    result:
+      "Gives international buyers a credible, quote-ready first touchpoint online — replacing reliance on trade fairs and static catalogues with a site built to convert cold inbound interest into quote requests.",
+    features: [
+      "Heritage-driven brand identity — deep green & gold palette",
+      "6-page layout — Home, Products, Industries, About, Contact, Product detail pages",
+      "Dedicated showcase for Black Pepper, Cardamom, and Turmeric",
+      "4-step export process timeline with quality-assurance messaging",
+      "Industries-served segmentation for 6 buyer types",
+      "WhatsApp + quote-request contact funnel",
     ],
   },
 ];
@@ -267,6 +292,60 @@ function SalonMockup({ accentColor, darkBg }: { accentColor: string; darkBg: str
   );
 }
 
+function SpiceExportMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
+  const products = [
+    { label: "Black Pepper", color: "#2b2b2b" },
+    { label: "Cardamom", color: "#6b8f3f" },
+    { label: "Turmeric", color: "#d99a2b" },
+  ];
+
+  return (
+    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
+      {/* Nav */}
+      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
+        <div className="flex items-center gap-2">
+          <div className="h-3 w-3 rounded-full" style={{ backgroundColor: accentColor + "80" }} />
+          <div className="h-1.5 w-20 rounded-full bg-white/25" />
+        </div>
+        <div className="flex items-center gap-3">
+          {["Home", "Products", "Industries", "About"].map((item, i) => (
+            <div key={item} className="text-[7px]" style={{ color: i === 0 ? accentColor : "rgba(255,255,255,0.3)" }}>{item}</div>
+          ))}
+          <div className="h-5 w-20 rounded-md text-[7px] font-semibold flex items-center justify-center" style={{ backgroundColor: accentColor, color: "#1a1200" }}>
+            Request Quote
+          </div>
+        </div>
+      </div>
+      {/* Hero */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-2.5 px-6 py-4" style={{ background: `radial-gradient(ellipse at 50% 30%, ${accentColor}18 0%, transparent 70%)` }}>
+        <div className="text-[7px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>Exporting Authentic Indian Spices</div>
+        <div className="text-center">
+          <div className="h-3 w-48 rounded-full bg-white/80 mx-auto mb-1.5" />
+          <div className="h-2 w-40 rounded-full bg-white/30 mx-auto mb-0.5" />
+          <div className="h-2 w-32 rounded-full bg-white/20 mx-auto" />
+        </div>
+        <div className="flex gap-2 mt-1">
+          <div className="h-6 w-24 rounded-md flex items-center justify-center text-[7px] font-bold" style={{ backgroundColor: accentColor, color: "#1a1200" }}>
+            Request a Quote
+          </div>
+          <div className="h-6 w-24 rounded-md flex items-center justify-center text-[7px]" style={{ border: `1px solid ${accentColor}50`, color: accentColor }}>
+            Explore Products
+          </div>
+        </div>
+      </div>
+      {/* Product strip */}
+      <div className="grid grid-cols-3 border-t border-white/5">
+        {products.map((product) => (
+          <div key={product.label} className="flex flex-col items-center gap-1 py-2 border-r border-white/5 last:border-r-0" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
+            <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: product.color }} />
+            <div className="text-[6px] text-white/40">{product.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ClientBrowserMockup({ project }: { project: ClientProject }) {
   return (
     <div className="flex flex-col rounded-xl overflow-hidden border border-white/10 shadow-xl h-52">
@@ -286,6 +365,7 @@ function ClientBrowserMockup({ project }: { project: ClientProject }) {
       <div className="flex-1 overflow-hidden">
         {project.mockupType === "dental" && <DentalMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
         {project.mockupType === "salon"  && <SalonMockup  accentColor={project.accentColor} darkBg={project.darkBg} />}
+        {project.mockupType === "spice"  && <SpiceExportMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
       </div>
     </div>
   );

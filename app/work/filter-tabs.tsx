@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ProjectCards } from "./project-cards";
 
-const CLIENT_TABS = ["All", "Healthcare", "Beauty & Wellness"] as const;
+const CLIENT_TABS = ["All", "Healthcare", "Beauty & Wellness", "Food & Export"] as const;
 export type ClientTab = (typeof CLIENT_TABS)[number];
 
 export function FilterTabs() {

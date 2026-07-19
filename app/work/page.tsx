@@ -88,7 +88,7 @@ function WorkHero() {
 
           <div className="mt-4 flex flex-wrap justify-center gap-8">
             {[
-              { value: "5+", label: "Projects Shipped" },
+              { value: "6+", label: "Projects Shipped" },
               { value: "100%", label: "On-Time Delivery" },
               { value: "4.9★", label: "Client Rating" },
             ].map((stat) => (
