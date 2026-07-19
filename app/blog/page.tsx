@@ -28,6 +28,7 @@ const categoryColors: Record<string, string> = {
   "Pricing & Planning": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
   "Tech Advice": "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
   "Hiring Guide": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+  "Industry Guide": "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
 };
 
 export default function BlogPage() {

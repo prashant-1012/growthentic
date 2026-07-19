@@ -525,6 +525,472 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "website-maintenance-cost-india",
+    title: "Website Maintenance Cost in India: What to Budget For After Launch",
+    category: "Pricing & Planning",
+    readTime: "5 min",
+    date: "August 26, 2026",
+    isoDate: "2026-08-26",
+    excerpt:
+      "Launch day isn't the finish line — it's the start of an ongoing cost most business owners don't plan for. Here's exactly what website maintenance actually costs in India, and what you're paying for at each price point.",
+    quickAnswer:
+      "Basic website maintenance in India costs ₹1,000–₹3,000/month for a small business site — covering hosting, security updates, and minor content changes. Larger sites with e-commerce or custom features can run ₹5,000–₹15,000/month. Skipping maintenance entirely is the most expensive option long-term, since it usually means an expensive rebuild later.",
+    content: [
+      {
+        type: "p",
+        text: "Launch day isn't the finish line — it's the start of an ongoing cost most business owners don't plan for. Here's exactly what website maintenance actually costs in India, and what you're paying for at each price point.",
+      },
+      { type: "h2", text: "Why Maintenance Costs Exist in the First Place" },
+      {
+        type: "p",
+        text: "A website isn't a one-time purchase like a signboard — it's closer to a shop that needs its locks checked, its shelves restocked, and its lights kept on. Hosting needs renewing, security patches need applying before they're exploited, and content goes stale without updates. None of that stops after launch.",
+      },
+      { type: "h2", text: "What's Actually Included in \"Maintenance\"" },
+      {
+        type: "ul",
+        items: [
+          "Hosting & domain renewal — keeping your site online and your address registered",
+          "Security updates — patching CMS or plugin vulnerabilities before they're exploited",
+          "Content updates — changing prices, adding photos, updating hours or offers",
+          "Backups — a recent copy of your site in case something breaks",
+          "Uptime monitoring — someone notices, and fixes it, if the site goes down",
+          "Small bug fixes — a broken form, or a layout issue on a new phone model",
+        ],
+      },
+      { type: "h2", text: "Typical Maintenance Costs by Site Type" },
+      {
+        type: "table",
+        headers: ["Site Type", "Monthly Cost", "What's Covered"],
+        rows: [
+          ["Static business website", "₹1,000–₹2,000", "Hosting, minor content edits, uptime checks"],
+          ["WordPress site", "₹1,500–₹4,000", "Above, plus plugin and security updates (higher risk surface)"],
+          ["E-commerce store", "₹3,000–₹8,000", "Above, plus inventory support and payment gateway monitoring"],
+          ["Custom web app", "₹5,000–₹15,000+", "Above, plus feature updates, database maintenance, priority fixes"],
+        ],
+      },
+      { type: "h2", text: "What Happens If You Skip Maintenance" },
+      {
+        type: "p",
+        text: "Nothing breaks immediately — that's what makes it easy to skip. But an unpatched WordPress plugin eventually gets exploited, outdated content quietly signals that a business has gone stale, and small unresolved bugs compound. The businesses that skip maintenance entirely usually end up paying far more later for an emergency fix or a full rebuild, instead of a steady, predictable monthly cost.",
+      },
+      { type: "h2", text: "How to Keep Maintenance Costs Down" },
+      {
+        type: "ul",
+        items: [
+          "Choose a static or Next.js site over a plugin-heavy WordPress build — fewer moving parts means less to patch",
+          "Batch your content changes into one request instead of asking for one-off edits constantly",
+          "Ask for a fixed monthly maintenance package upfront rather than paying ad hoc — it's usually cheaper per request",
+        ],
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "Budget ₹1,000–₹3,000 a month for a typical small business website, and treat it as a normal cost of doing business online — the same way you'd budget for rent or utilities. Launch is the beginning of your website's life, not the end of the spending.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does website maintenance cost per month in India?",
+        a: "For a typical small business website, expect ₹1,000–₹3,000 per month, covering hosting, security updates, and minor content changes. E-commerce stores and custom web apps run higher, from ₹3,000 up to ₹15,000+ per month.",
+      },
+      {
+        q: "What happens if I don't maintain my website after launch?",
+        a: "Nothing breaks right away, but unpatched security issues, stale content, and small unresolved bugs build up over time — often leading to a far more expensive emergency fix or full rebuild later, instead of predictable ongoing costs.",
+      },
+      {
+        q: "Is maintenance included in the initial website cost?",
+        a: "Usually not long-term — most projects include a short post-launch support window (days to a few weeks), after which ongoing maintenance is a separate monthly cost or handled on a one-off basis.",
+      },
+      {
+        q: "Can I do website maintenance myself to save money?",
+        a: "For simple content edits, yes, if your site includes a CMS you're comfortable using. Security patching and technical fixes are harder to DIY safely, which is why most small businesses pay a developer a modest monthly fee for that part.",
+      },
+    ],
+  },
+  {
+    slug: "ecommerce-website-cost-india",
+    title: "E-Commerce Website Cost in India: Complete 2026 Pricing Guide",
+    category: "Pricing & Planning",
+    readTime: "6 min",
+    date: "September 9, 2026",
+    isoDate: "2026-09-09",
+    excerpt:
+      "E-commerce pricing in India swings from ₹1,500/month to ₹5,00,000+, and the reason is rarely explained clearly. Here's a complete breakdown of what determines the cost of your online store, and what you should realistically budget.",
+    quickAnswer:
+      "A functional e-commerce website in India typically costs ₹22,000–₹60,000 for a small business with a real product catalogue, cart, and payment gateway. DIY platforms like Shopify or Dukaan run cheaper upfront but charge ongoing subscription and transaction fees; a custom-built store costs more initially but has no per-sale cut and no platform lock-in.",
+    content: [
+      {
+        type: "p",
+        text: "E-commerce pricing in India swings from ₹1,500/month to ₹5,00,000+, and the reason is rarely explained clearly. Here's a complete breakdown of what determines the cost of your online store, and what you should realistically budget.",
+      },
+      { type: "h2", text: "Why E-Commerce Costs More Than a Regular Website" },
+      {
+        type: "p",
+        text: "A regular website shows information. An e-commerce store has to manage a product database, cart logic, checkout flow, payment gateway integration (Razorpay, PayU, and similar), order tracking, and inventory — all of which need to work correctly with real money moving through them. That extra complexity is where the cost difference comes from.",
+      },
+      { type: "h2", text: "The Pricing Tiers" },
+      {
+        type: "table",
+        headers: ["Option", "Price Range", "Ongoing Costs", "Best For"],
+        rows: [
+          ["DIY platform (Shopify/Dukaan)", "₹1,500–₹5,000/mo", "Subscription + per-transaction fees", "Testing an idea fast, very small catalogues"],
+          ["Freelancer-built store", "₹22,000–₹60,000", "Hosting + maintenance (₹2,000–₹5,000/mo)", "Small businesses wanting ownership, no per-sale cut"],
+          ["Agency-built store", "₹1,00,000–₹5,00,000+", "Hosting + retainer", "Large catalogues, multi-warehouse, enterprise needs"],
+        ],
+      },
+      { type: "h2", text: "What Affects E-Commerce Pricing Specifically" },
+      {
+        type: "ul",
+        items: [
+          "Number of products — a 20-product catalogue is far simpler than a 500-product one with size and colour variants",
+          "Payment gateway integration — setting up and testing Razorpay or PayU properly takes real development time",
+          "Inventory management — manual stock updates versus automated tracking",
+          "Shipping logic — a flat rate is simple; weight- or location-based calculation adds complexity",
+          "Custom vs. template design — a unique storefront costs more than a themed, off-the-shelf layout",
+        ],
+      },
+      { type: "h2", text: "What You Get at Each Price Point" },
+      {
+        type: "ul",
+        items: [
+          "₹22,000–₹35,000 — A clean store with up to ~50 products, cart, one payment gateway, and mobile-first design",
+          "₹35,000–₹60,000 — A larger catalogue with product variants, coupon codes, and an order management dashboard",
+          "₹60,000+ — Multi-vendor support, custom shipping logic, advanced inventory, and integrations with accounting tools",
+        ],
+      },
+      { type: "h2", text: "DIY Platforms vs. a Custom-Built Store: The Real Tradeoff" },
+      {
+        type: "p",
+        text: "Shopify and Dukaan look cheaper on day one, but their subscription fees plus a percentage cut on every transaction add up — for a store doing steady volume, that ongoing cut often exceeds the upfront cost of a custom build within two to three years. A custom store costs more initially, but you own it outright with no per-sale fee and no risk of the platform changing its pricing on you later.",
+      },
+      { type: "h2", text: "My Honest Recommendation" },
+      {
+        type: "p",
+        text: "For most Indian small businesses ready to sell online seriously, ₹22,000–₹35,000 for a custom-built store covers it well and pays for itself quickly. Reach for a DIY platform only if you need to launch within days and are still validating whether the idea works at all.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does a basic online store cost in India?",
+        a: "A basic, professionally built online store with a real product catalogue, cart, and one payment gateway typically starts around ₹22,000 in India.",
+      },
+      {
+        q: "Is Shopify cheaper than hiring a developer for e-commerce?",
+        a: "Shopify is cheaper upfront (₹1,500–₹5,000/month) but charges ongoing subscription and transaction fees that add up over time. A freelancer-built store (₹22,000–₹60,000) costs more initially but has no per-sale cut and you own the platform outright.",
+      },
+      {
+        q: "What ongoing costs come with an e-commerce website?",
+        a: "Expect hosting and maintenance costs of ₹2,000–₹5,000 per month for a custom-built store, or subscription plus transaction fees if you use a DIY platform like Shopify or Dukaan.",
+      },
+      {
+        q: "Do I need a custom e-commerce site or is a DIY platform enough?",
+        a: "A DIY platform is fine for quickly testing whether an idea has demand. Once you're selling seriously and consistently, a custom-built store usually becomes the cheaper option long-term and gives you full ownership with no platform lock-in.",
+      },
+    ],
+  },
+  {
+    slug: "hidden-costs-free-website-builders",
+    title: "Hidden Costs of \"Free\" Website Builders (Wix, GoDaddy) Nobody Tells You",
+    category: "Pricing & Planning",
+    readTime: "5 min",
+    date: "September 23, 2026",
+    isoDate: "2026-09-23",
+    excerpt:
+      "\"Free website builder\" is one of the most misleading phrases in web design. Here's what Wix, GoDaddy, and similar platforms actually cost once you count everything they don't mention upfront.",
+    quickAnswer:
+      "\"Free\" website builders like Wix and GoDaddy aren't actually free — once you add a custom domain, remove ads, and unlock e-commerce features, most small businesses end up paying ₹8,000–₹20,000+ per year, often for a slower, less customisable site than a one-time custom build.",
+    content: [
+      {
+        type: "p",
+        text: "\"Free website builder\" is one of the most misleading phrases in web design. Here's what Wix, GoDaddy, and similar platforms actually cost once you count everything they don't mention upfront.",
+      },
+      { type: "h2", text: "What \"Free\" Actually Means" },
+      {
+        type: "p",
+        text: "The free tier of most builders is really a trial, not a business website. It typically comes with a builder-branded subdomain (like yourbusiness.wixsite.com), ads for the platform displayed on your pages, and key features — custom domains, forms, e-commerce — locked behind a paid plan.",
+      },
+      { type: "h2", text: "The Real Costs, Line by Line" },
+      {
+        type: "table",
+        headers: ["Feature", "\"Free\" Plan", "What You Actually Pay to Unlock It"],
+        rows: [
+          ["Custom domain (yourbusiness.com)", "Not included", "₹800–₹1,500/year, plus a paid plan to connect it"],
+          ["Remove builder ads/branding", "Not included", "Requires upgrading to a paid tier (₹500–₹1,500/mo)"],
+          ["E-commerce / payments", "Not included", "A higher-tier plan (₹1,500–₹5,000/mo) plus transaction fees"],
+          ["Forms beyond basic contact", "Limited", "Paid plan or third-party add-on"],
+          ["Storage/bandwidth for real traffic", "Capped", "Upgrade required once you get real visitors"],
+        ],
+      },
+      { type: "h2", text: "The Costs That Aren't in Rupees" },
+      {
+        type: "ul",
+        items: [
+          "Speed — builder sites are often heavier and slower than a custom-coded site, which affects Google ranking and how many visitors stay",
+          "Lock-in — your content and design live inside their platform; leaving means starting over on custom code",
+          "Design ceiling — you're limited to their templates and drag-and-drop blocks, which is why so many builder sites end up looking similar",
+          "SEO limitations — less control over the technical SEO details that matter for ranking locally",
+        ],
+      },
+      { type: "h2", text: "When a DIY Builder Actually Makes Sense" },
+      {
+        type: "p",
+        text: "To be fair, there's a real use case: testing a business idea for a few weeks with zero budget before committing to anything. As a temporary placeholder, a free builder is genuinely useful. As a long-term business asset, it rarely holds up.",
+      },
+      { type: "h2", text: "The Real Comparison" },
+      {
+        type: "p",
+        text: "Over two to three years, a one-time ₹10,000 custom website plus ₹1,000–₹2,000/month maintenance often costs less than a \"free\" builder's paid tier stacked with the add-ons most businesses end up needing — and you get a faster, fully-owned site at the end of it.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "\"Free\" website builders are really a subscription with the useful parts locked behind paywalls. For a business that's serious about its online presence, a modest one-time investment in a real website is usually the cheaper option once you count everything honestly.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is Wix actually free to use for a business website?",
+        a: "Only in a very limited trial sense — a custom domain, removing Wix branding/ads, and e-commerce features all require a paid plan, which most real businesses need from day one.",
+      },
+      {
+        q: "How much does a Wix or GoDaddy website really cost per year?",
+        a: "Once you add a custom domain and a paid tier to remove ads and unlock features like e-commerce, most small businesses end up paying roughly ₹8,000–₹20,000 or more per year.",
+      },
+      {
+        q: "Are free website builders bad for SEO?",
+        a: "They're not disqualifying, but they typically load slower and offer less control over technical SEO details than a custom-built site, which can put you at a disadvantage in local search rankings.",
+      },
+      {
+        q: "Is it cheaper to use a website builder or hire a developer long-term?",
+        a: "Over two to three years, a one-time custom website plus modest monthly maintenance is often cheaper than a builder's paid subscription stacked with the add-ons most growing businesses end up needing.",
+      },
+    ],
+  },
+  {
+    slug: "website-essentials-dental-clinics-india",
+    title: "Website Essentials for Dental Clinics in India",
+    category: "Industry Guide",
+    readTime: "6 min",
+    date: "October 7, 2026",
+    isoDate: "2026-10-07",
+    excerpt:
+      "A dental clinic website isn't a digital brochure — it's the thing that decides whether someone in pain, googling at 11 PM, picks up the phone and calls you or the clinic next door. Here's what it actually needs.",
+    quickAnswer:
+      "A dental clinic website in India needs online appointment booking, a services page with plain-language explanations and transparent pricing, patient testimonials, doctor credentials, and prominent WhatsApp or call-to-book buttons. Most clinics need 5–6 pages and can expect to pay ₹10,000–₹22,000 for a properly built site.",
+    content: [
+      {
+        type: "p",
+        text: "A dental clinic website isn't a digital brochure — it's the thing that decides whether someone in pain, googling at 11 PM, picks up the phone and calls you or the clinic next door. Here's what it actually needs.",
+      },
+      { type: "h2", text: "Why a Generic Business Website Doesn't Work for a Clinic" },
+      {
+        type: "p",
+        text: "Someone booking a haircut takes a small risk. Someone choosing a dentist is deciding who gets to work on their teeth — the trust bar is much higher, and often there's some anxiety involved too. A clinic website's job is to reduce that uncertainty before the patient ever calls, not just to look presentable.",
+      },
+      { type: "h2", text: "The Non-Negotiable Pages" },
+      {
+        type: "ul",
+        items: [
+          "Home — a clear value proposition, a prominent booking or WhatsApp CTA, and trust signals visible without scrolling",
+          "Services — every treatment explained in plain language; a patient shouldn't need a dental degree to understand what \"endodontics\" means",
+          "Doctor/team profiles — credentials, experience, and photos, since patients want to know who's actually treating them",
+          "Patient testimonials — social proof carries enormous weight in healthcare decisions specifically",
+          "Appointment booking — a proper form or booking flow, not just a phone number and a hope",
+          "Contact & location — a Google Maps embed, clear hours, and more than one way to reach you",
+        ],
+      },
+      { type: "h2", text: "Features That Actually Move the Needle" },
+      {
+        type: "ul",
+        items: [
+          "A multi-step booking form (service, then preferred date/time, then contact details) — it reduces friction far more than a single generic \"send us a message\" box",
+          "Facility or treatment photos that build confidence before someone ever walks through the door",
+          "A WhatsApp click-to-chat button — most patients in India would rather message than call",
+          "An FAQ section addressing the questions people actually have: does it hurt, what does it cost, is EMI available",
+          "Fast load time — someone searching in pain at midnight won't wait for a slow site; they'll call the next result",
+        ],
+      },
+      { type: "h2", text: "What This Looked Like for Smile Care Studio" },
+      {
+        type: "p",
+        text: "Smile Care Studio, one of our clinic projects, is a good concrete example: six pages, a multi-step booking flow instead of a single contact form, and dark/light mode so the site is comfortable to browse late at night — which, for a dental clinic, is exactly when a lot of anxious searching happens.",
+      },
+      { type: "h2", text: "Realistic Budget & Timeline" },
+      {
+        type: "p",
+        text: "Most dental clinic websites fall in the ₹10,000–₹22,000 range depending on booking complexity and page count, and can be delivered in 7–14 days — in line with a standard business website or e-commerce-lite build.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "A clinic website succeeds or fails on trust, not decoration. Get the booking flow, credentials, and testimonials right, and the design work is in service of something that actually converts anxious searchers into booked patients.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What should a dental clinic website include?",
+        a: "At minimum: a clear services page explained in plain language, doctor credentials and photos, patient testimonials, an online appointment booking flow, and prominent WhatsApp or call-to-book buttons.",
+      },
+      {
+        q: "How much does a website for a dental clinic cost in India?",
+        a: "Most dental clinic websites cost ₹10,000–₹22,000 in India, depending on the number of pages and how complex the appointment booking flow needs to be.",
+      },
+      {
+        q: "Do dental clinic websites need an online booking system?",
+        a: "It's strongly recommended. A multi-step booking form reduces friction significantly compared to a plain contact form, and directly increases the number of visitors who convert into booked appointments.",
+      },
+    ],
+  },
+  {
+    slug: "website-essentials-salon-beauty-business-india",
+    title: "Website Essentials for Salons & Beauty Businesses in India",
+    category: "Industry Guide",
+    readTime: "6 min",
+    date: "October 21, 2026",
+    isoDate: "2026-10-21",
+    excerpt:
+      "Salons and beauty businesses run on visual trust — clients decide based on your work before they ever decide based on your words. Here's what a salon website needs to actually convert browsers into bookings.",
+    quickAnswer:
+      "A salon or beauty business website in India needs a visual portfolio gallery, a service menu with transparent pricing, stylist/specialist profiles, client testimonials, and an easy booking or WhatsApp flow. Most salon sites need 6–8 pages and cost ₹10,000–₹22,000 to build properly.",
+    content: [
+      {
+        type: "p",
+        text: "Salons and beauty businesses run on visual trust — clients decide based on your work before they ever decide based on your words. Here's what a salon website needs to actually convert browsers into bookings.",
+      },
+      { type: "h2", text: "Why Salons Need a Different Kind of Website" },
+      {
+        type: "p",
+        text: "This is one of the most visually-driven, reputation-driven categories of small business. Clients already judge you by your Instagram feed — your website needs to carry that same visual trust, but on a platform you actually own, that ranks on Google, and that doesn't disappear if an algorithm changes overnight.",
+      },
+      { type: "h2", text: "The Non-Negotiable Pages" },
+      {
+        type: "ul",
+        items: [
+          "Home — strong visual identity and an immediate sense of the experience clients can expect",
+          "Services & pricing — a clear menu-style breakdown; vague pricing generates more \"how much?\" DMs than bookings",
+          "Gallery — a real portfolio of past work, not stock photography",
+          "Team/stylist profiles — specialties matter here (colour specialist, bridal makeup, skincare) and help clients pick the right person",
+          "Testimonials — client reviews reduce the risk of trying someone new",
+          "Book now / contact — a fast, frictionless path to an appointment",
+        ],
+      },
+      { type: "h2", text: "Features That Actually Move the Needle" },
+      {
+        type: "ul",
+        items: [
+          "A proper gallery with lightbox viewing — clients want to zoom into detail work, not squint at a thumbnail",
+          "A transparent service menu with prices — it filters out mismatched inquiries before they ever reach your phone",
+          "An Instagram link or embed that bridges your existing social following into your owned website",
+          "WhatsApp or online booking built directly into the flow, not buried at the bottom of the page",
+          "Individual specialist profiles — clients increasingly book a specific stylist, not just \"the salon\"",
+        ],
+      },
+      { type: "h2", text: "What This Looked Like for Velour Studios" },
+      {
+        type: "p",
+        text: "Velour Studios, one of our salon projects, is a good concrete example: eight pages, a gallery with lightbox viewing for portfolio work, and individual team profiles — built specifically so visual trust and specialist selection both came through clearly.",
+      },
+      { type: "h2", text: "Realistic Budget & Timeline" },
+      {
+        type: "p",
+        text: "Most salon and beauty business websites fall in the ₹10,000–₹22,000 range given the extra page count for gallery and team profiles, delivered in 7–14 days.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "A salon website's job is to do visually what your best client already believes about you — and then make booking effortless once they're convinced. Get the gallery and pricing transparency right, and the rest follows.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What should a salon or beauty business website include?",
+        a: "At minimum: a visual portfolio gallery, a service menu with transparent pricing, stylist or specialist profiles, client testimonials, and an easy booking or WhatsApp flow.",
+      },
+      {
+        q: "How much does a salon website cost in India?",
+        a: "Most salon and beauty business websites cost ₹10,000–₹22,000 in India, reflecting the extra pages typically needed for a gallery and team/stylist profiles.",
+      },
+      {
+        q: "Should a salon website link to its Instagram page?",
+        a: "Yes. Linking or embedding your Instagram bridges your existing social following into your owned website, which is what actually ranks on Google and won't disappear if the platform changes its algorithm.",
+      },
+    ],
+  },
+  {
+    slug: "website-essentials-restaurants-cafes-india",
+    title: "Website Essentials for Restaurants & Cafes in India",
+    category: "Industry Guide",
+    readTime: "5 min",
+    date: "November 4, 2026",
+    isoDate: "2026-11-04",
+    excerpt:
+      "If your restaurant only exists on Zomato and Swiggy, you're renting your customer relationships from someone else. Here's what a restaurant website actually needs to build a direct connection with diners.",
+    quickAnswer:
+      "A restaurant or cafe website in India needs a regularly updated digital menu with photos and prices, ambience photography, a Google Maps embed with hours, and a WhatsApp button for reservations or catering inquiries — with links out to Zomato/Swiggy for delivery rather than building custom ordering.",
+    content: [
+      {
+        type: "p",
+        text: "If your restaurant only exists on Zomato and Swiggy, you're renting your customer relationships from someone else. Here's what a restaurant website actually needs to build a direct connection with diners.",
+      },
+      { type: "h2", text: "Why Restaurants Need a Website Beyond Zomato/Swiggy" },
+      {
+        type: "p",
+        text: "Aggregator platforms are excellent for discovery, but they take a commission on every order and own the customer relationship, not you. A website lets you build your own brand story, take direct table reservations and catering inquiries, and show up when someone searches for your restaurant by name rather than browses a category listing.",
+      },
+      { type: "h2", text: "The Non-Negotiable Pages" },
+      {
+        type: "ul",
+        items: [
+          "Home — strong ambience photography that sells the experience, not just the food",
+          "Menu — prices, photos, and clear dietary tags (veg/non-veg/vegan), kept current rather than a stale PDF from two years ago",
+          "Reservations/contact — a fast path to book a table or ask about a private event",
+          "Gallery — interior, exterior, and signature dishes",
+          "Location & hours — a Google Maps embed and hours that are actually kept up to date, including holidays",
+        ],
+      },
+      { type: "h2", text: "Features That Actually Move the Needle" },
+      {
+        type: "ul",
+        items: [
+          "High-quality food photography — this single factor influences restaurant decisions more than almost anything else on the page",
+          "A digital menu that's easy for you to update seasonally, instead of a static PDF that quietly goes stale",
+          "A WhatsApp button for reservations or catering — faster and more comfortable for most diners than a phone call",
+          "Links out to your Zomato/Swiggy listings and Google reviews, rather than competing with platforms diners already trust for ordering",
+          "Mobile-first design — most people decide where to eat by checking a phone while they're already hungry and nearby",
+        ],
+      },
+      { type: "h2", text: "What About Online Ordering?" },
+      {
+        type: "p",
+        text: "For a single-location restaurant, building a full custom ordering and payment system is usually not worth it — Zomato and Swiggy already dominate that behaviour in India, and fighting for it rarely pays off. The better use of your own website is brand, menu, reservations, and catering leads; link out to the aggregators for the actual delivery order.",
+      },
+      { type: "h2", text: "Realistic Budget & Timeline" },
+      {
+        type: "p",
+        text: "Most restaurant and cafe websites fall in the ₹8,000–₹18,000 range depending on menu complexity and photography needs, delivered in 5–10 days.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "A restaurant website's job isn't to replace Zomato and Swiggy — it's to own the parts of the relationship they can't: your brand, your direct reservations, and the customers who search for you by name.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does a restaurant need its own website if it's already on Zomato and Swiggy?",
+        a: "Yes — aggregators are good for discovery and delivery, but they take a commission and own the customer relationship. A website lets you build direct brand trust, take reservations, and handle catering inquiries without a middleman.",
+      },
+      {
+        q: "Should a restaurant build its own online ordering system?",
+        a: "Usually not for a single location — Zomato and Swiggy already dominate delivery behaviour in India. It's generally better to link out to those platforms and use your own website for brand, menu, and reservations instead.",
+      },
+      {
+        q: "How much does a restaurant website cost in India?",
+        a: "Most restaurant and cafe websites cost ₹8,000–₹18,000 in India, depending on menu complexity and how much photography is involved, and can be delivered in 5–10 days.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
