@@ -1,11 +1,22 @@
+export interface BlogFaq {
+  q: string;
+  a: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
   category: string;
   readTime: string;
   date: string;
+  /** ISO 8601 date (YYYY-MM-DD) for structured data — kept separate from the display `date` string. */
+  isoDate: string;
   excerpt: string;
+  /** Short, direct answer shown right under the headline — written to be quotable by AI search summaries. */
+  quickAnswer: string;
   content: Section[];
+  /** Optional Q&A rendered at the end of the post and emitted as FAQPage structured data. */
+  faqs?: BlogFaq[];
 }
 
 interface Section {
@@ -23,8 +34,11 @@ export const blogPosts: BlogPost[] = [
     category: "Business Growth",
     readTime: "4 min",
     date: "January 15, 2026",
+    isoDate: "2026-01-15",
     excerpt:
       "If your business doesn't have a website in 2026, you're invisible to a massive chunk of your potential customers — and you're handing them directly to your competitors.",
+    quickAnswer:
+      "Yes — in 2026, a small business without a website is invisible to the 75%+ of Indian customers who research locally online before buying. A basic business website costs around ₹10,000 and can be live in under two weeks.",
     content: [
       {
         type: "p",
@@ -72,6 +86,20 @@ export const blogPosts: BlogPost[] = [
         text: "In 2026, not having a website isn't a neutral choice — it's an active disadvantage. The good news is that getting one has never been more affordable or faster. Most small business websites can be built and live in under two weeks. If you've been putting it off, this is your sign to stop.",
       },
     ],
+    faqs: [
+      {
+        q: "Do I really need a website if I already have Instagram or Facebook?",
+        a: "Social media helps with discovery, but you don't own that platform — algorithms, bans, or outages can cut off access anytime. A website is yours permanently, and unlike Instagram, it can actually rank on Google.",
+      },
+      {
+        q: "How much does a basic business website cost in India?",
+        a: "A solid small business website in India typically starts around ₹10,000 — about the cost of one month of Instagram ads, but it keeps working for years instead of days.",
+      },
+      {
+        q: "How long does it take to get a website live?",
+        a: "Most small business websites can be built and launched in under two weeks, and simple landing pages can go live in as little as 3–5 days.",
+      },
+    ],
   },
   {
     slug: "how-much-does-website-cost-india",
@@ -79,8 +107,11 @@ export const blogPosts: BlogPost[] = [
     category: "Pricing & Planning",
     readTime: "5 min",
     date: "February 3, 2026",
+    isoDate: "2026-02-03",
     excerpt:
       "One of the most common questions I get from small business owners is: \"How much does a website cost?\" The honest answer is: it depends. But let me give you the real breakdown.",
+    quickAnswer:
+      "A professional small business website in India typically costs ₹8,000–₹40,000 from a skilled freelancer, with ₹10,000–₹20,000 being the sweet spot for most clinics, salons, and shops. Cheap DIY builders run ₹500–₹2,000/month; agencies charge ₹50,000–₹5,00,000+.",
     content: [
       {
         type: "p",
@@ -139,6 +170,20 @@ export const blogPosts: BlogPost[] = [
         text: "For most Indian small businesses — clinics, salons, restaurants, boutiques — a budget of ₹10,000–₹20,000 gets you a website that looks premium, performs well, and does its job. Don't under-invest and get something that embarrasses you. Don't overpay an agency for features you don't need.",
       },
     ],
+    faqs: [
+      {
+        q: "What is the cheapest way to get a website in India?",
+        a: "DIY website builders (like Wix or GoDaddy) are the cheapest at ₹500–₹2,000/month, but they come with template limitations, ongoing subscription costs, and weaker performance than a custom-built site.",
+      },
+      {
+        q: "Is a professional freelancer or an agency cheaper?",
+        a: "A professional freelancer typically charges ₹8,000–₹40,000 for a small business website — a fraction of agency pricing (₹50,000–₹5,00,000+) — while still delivering custom design and quality comparable to agency work.",
+      },
+      {
+        q: "What ongoing costs should I budget for after my website launches?",
+        a: "Budget ₹800–₹1,500/year for a domain, ₹2,000–₹8,000/year for hosting (or free on Vercel for static sites), and ₹1,000–₹3,000/month if you want a developer to handle ongoing updates.",
+      },
+    ],
   },
   {
     slug: "nextjs-vs-wordpress-small-business-india",
@@ -146,8 +191,11 @@ export const blogPosts: BlogPost[] = [
     category: "Tech Advice",
     readTime: "4 min",
     date: "March 10, 2026",
+    isoDate: "2026-03-10",
     excerpt:
       "If you've asked a web developer about building your business website, you've probably heard both names. Here's a clear, no-jargon comparison to help you understand which one actually makes sense for you.",
+    quickAnswer:
+      "For most Indian small businesses, Next.js is the better long-term choice — faster, more secure, and free to host on Vercel. WordPress still makes sense if you need to frequently edit content yourself without a developer.",
     content: [
       {
         type: "p",
@@ -209,6 +257,20 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "The worst choice? A bloated WordPress site stuffed with cheap plugins that loads slowly, gets hacked, and needs constant maintenance. Unfortunately, that's what a lot of cheap freelancers deliver.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is Next.js better than WordPress for a small business?",
+        a: "For speed, security, and hosting cost, yes — Next.js is generally better. WordPress wins only if you need to self-edit content frequently through a visual dashboard without involving a developer.",
+      },
+      {
+        q: "Can I update a Next.js website myself without a developer?",
+        a: "Not out of the box — Next.js sites need a developer for content changes unless a CMS (like Sanity) is built in from the start. WordPress has a built-in visual editor that non-technical users can use directly.",
+      },
+      {
+        q: "Which is cheaper to host, Next.js or WordPress?",
+        a: "Next.js is usually cheaper — static and small dynamic sites can be hosted free on Vercel. WordPress requires paid hosting, typically ₹2,000–₹8,000 per year, plus ongoing plugin maintenance.",
       },
     ],
   },

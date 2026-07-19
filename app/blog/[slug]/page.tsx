@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/data/blog-posts";
+import { FaqList } from "@/components/faq-list";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -50,9 +51,42 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const url = `https://growthentic.in/blog/${post.slug}`;
+
+  const graph: object[] = [
+    {
+      "@type": "BlogPosting",
+      "@id": `${url}#article`,
+      headline: post.title,
+      description: post.excerpt,
+      image: "https://growthentic.in/ogImage.jpeg",
+      datePublished: post.isoDate,
+      dateModified: post.isoDate,
+      author: { "@id": "https://growthentic.in/#founder" },
+      publisher: { "@id": "https://growthentic.in/#business" },
+      mainEntityOfPage: url,
+    },
+  ];
+
+  if (post.faqs && post.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: post.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    });
+  }
+
+  const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden py-16 md:py-24">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
@@ -102,6 +136,16 @@ export default async function BlogPostPage({ params }: Props) {
               <p className="text-sm font-bold text-foreground">Prashant Kumar</p>
               <p className="text-xs text-muted-foreground">Founder, Growthentic · Pune, India</p>
             </div>
+          </div>
+
+          {/* Quick Answer */}
+          <div className="mt-6 rounded-2xl border border-brand/30 bg-brand/6 px-6 py-5">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-brand">
+              Quick Answer
+            </p>
+            <p className="text-base font-medium text-foreground leading-relaxed">
+              {post.quickAnswer}
+            </p>
           </div>
         </div>
       </section>
@@ -174,6 +218,16 @@ export default async function BlogPostPage({ params }: Props) {
             return null;
           })}
         </div>
+
+        {/* FAQ */}
+        {post.faqs && post.faqs.length > 0 && (
+          <div className="mt-12">
+            <h2 className="font-heading text-xl font-bold text-foreground mb-5">
+              Frequently Asked Questions
+            </h2>
+            <FaqList faqs={post.faqs} />
+          </div>
+        )}
 
         {/* CTA inside post */}
         <div className="mt-12 rounded-2xl border border-brand/30 bg-brand/6 p-6 flex flex-col sm:flex-row items-center gap-5">
