@@ -351,6 +351,180 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "freelancer-vs-agency-website-india",
+    title: "Freelancer vs. Agency in India: Which Should You Hire for Your Website?",
+    category: "Hiring Guide",
+    readTime: "6 min",
+    date: "July 29, 2026",
+    isoDate: "2026-07-29",
+    excerpt:
+      "The moment you decide to get a website built, someone tells you to 'just hire an agency,' and someone else tells you 'freelancers are cheaper and just as good.' Both are half right. Here's an honest, no-agenda breakdown of when each one actually makes sense.",
+    quickAnswer:
+      "For most small businesses, a freelance web developer is the better choice — typically ₹8,000–₹40,000 versus an agency's ₹50,000–₹5,00,000+, with direct access to the person building your site instead of an account manager. Agencies make more sense for large, multi-person projects with compliance or vendor requirements.",
+    content: [
+      {
+        type: "p",
+        text: "The moment you decide to get a website built, someone tells you to \"just hire an agency,\" and someone else tells you \"freelancers are cheaper and just as good.\" Both are half right. Here's an honest, no-agenda breakdown of when each one actually makes sense.",
+      },
+      { type: "h2", text: "What You're Actually Paying For" },
+      {
+        type: "p",
+        text: "An agency's price includes more than the website — it covers account managers, sales staff, office overhead, and a profit margin layered on top of the developer's time. A freelancer's price is mostly just the work itself. Neither is a scam; they're just different cost structures built for different kinds of projects.",
+      },
+      { type: "h2", text: "The Honest Comparison" },
+      {
+        type: "table",
+        headers: ["Factor", "Freelancer", "Agency"],
+        rows: [
+          ["Typical cost (business website)", "₹8,000–₹40,000", "₹50,000–₹5,00,000+"],
+          ["Who you talk to", "The person building your site", "An account manager relaying your requests"],
+          ["Turnaround", "Usually faster — fewer approval layers", "Slower — more internal handoffs"],
+          ["Availability if issues arise", "Direct WhatsApp or call access", "Support ticket or account manager queue"],
+          ["Best for", "Small businesses, single owner-operators", "Large teams, enterprise compliance needs"],
+          ["Risk if they disappear", "Single point of failure — vet carefully", "Lower — team continuity"],
+        ],
+      },
+      { type: "h2", text: "When an Agency Is Actually the Right Call" },
+      {
+        type: "ul",
+        items: [
+          "You need multiple specialists working simultaneously — designers, developers, and project managers — on a genuinely large, multi-part project.",
+          "Your company requires formal vendor contracts, compliance paperwork, or invoicing processes that only a registered agency can provide.",
+          "You need guaranteed continuity even if one specific person on the team leaves mid-project.",
+        ],
+      },
+      { type: "h2", text: "When a Freelancer Is the Right Call (Most Small Businesses)" },
+      {
+        type: "ul",
+        items: [
+          "You're a single business owner who needs a clean, professional website — not an enterprise platform.",
+          "You want direct access to whoever is actually building your site, not a relayed message through an account manager.",
+          "Budget matters, and you'd rather pay for the work itself than for agency overhead.",
+          "You want a faster turnaround — fewer people means fewer approval bottlenecks.",
+        ],
+      },
+      { type: "h2", text: "The Risk Nobody Mentions About Freelancers — And How to Manage It" },
+      {
+        type: "p",
+        text: "The honest downside of hiring a freelancer is that they're a single point of failure — if they disappear mid-project, there's no team to fall back on. The fix isn't to avoid freelancers; it's to vet them properly: check for a real, live portfolio, insist on a written scope and timeline, and pay in milestones (for example 50% upfront, 50% on delivery) rather than the full amount upfront. That structure protects you either way.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "For the vast majority of clinics, salons, restaurants, and small shops in India, a skilled freelancer delivers the same quality as an agency at a fraction of the cost, with faster communication. Agencies earn their higher price tag on large, complex projects that genuinely need a team. Match the hire to the size of the job, not the size of the fear.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is a freelancer riskier to hire than an agency?",
+        a: "Somewhat — a freelancer is a single point of failure, while an agency has team continuity. You manage that risk by checking a real portfolio, getting a written timeline, and paying in milestones rather than fully upfront.",
+      },
+      {
+        q: "Do freelancers deliver the same quality as agencies?",
+        a: "A skilled freelancer can deliver comparable or better quality than an agency for small business websites, since you're working directly with the person doing the actual design and development rather than through relayed requirements.",
+      },
+      {
+        q: "How much cheaper is a freelancer than an agency in India?",
+        a: "A professional freelancer typically charges ₹8,000–₹40,000 for a small business website, compared to ₹50,000–₹5,00,000+ from an agency — often for comparable quality on a project of this size.",
+      },
+      {
+        q: "What should I do to protect myself when hiring a freelancer?",
+        a: "Ask for a real, verifiable portfolio of live sites, get the scope and timeline in writing, and pay in milestones (such as 50% upfront, 50% on delivery) instead of paying the full amount before work starts.",
+      },
+    ],
+  },
+  {
+    slug: "questions-to-ask-before-hiring-web-designer",
+    title: "10 Questions to Ask Before Hiring a Web Designer in India",
+    category: "Hiring Guide",
+    readTime: "6 min",
+    date: "August 12, 2026",
+    isoDate: "2026-08-12",
+    excerpt:
+      "Most people evaluate a website designer on price alone — then get burned by scope creep, missed deadlines, or a site they can't update later. Asking the right questions upfront avoids all of that. Here are the 10 to ask before you pay anyone a rupee.",
+    quickAnswer:
+      "Before hiring any web designer, ask to see live client sites, get an itemized price, confirm a realistic timeline, and make sure you'll own your domain, hosting, and source code. A trustworthy designer answers all of these clearly and immediately — hesitation on any of them is a red flag.",
+    content: [
+      {
+        type: "p",
+        text: "Most people evaluate a website designer on price alone — then get burned by scope creep, missed deadlines, or a site they can't update later. Asking the right questions upfront avoids all of that. Here are the 10 to ask before you pay anyone a rupee.",
+      },
+      { type: "h3", text: "1. Can I see 2–3 live websites you've actually built?" },
+      {
+        type: "p",
+        text: "A good answer gives you working links you can open right now on your phone. A bad answer offers only screenshots, mockups, or \"I'll send some examples later.\"",
+      },
+      { type: "h3", text: "2. What exactly is included in this price?" },
+      {
+        type: "p",
+        text: "A good answer is an itemized list — number of pages, specific features, how many rounds of revisions. A bad answer is a vague \"everything you need\" with no specifics.",
+      },
+      { type: "h3", text: "3. What's the realistic timeline, and what could delay it?" },
+      {
+        type: "p",
+        text: "A good answer gives a specific range with honest caveats — for example, \"7–10 days, assuming you send content by day 2.\" A bad answer is an unrealistically fast promise with no conditions attached.",
+      },
+      { type: "h3", text: "4. Who do I contact if something breaks after launch?" },
+      {
+        type: "p",
+        text: "A good answer names a real person and a direct contact method — usually a WhatsApp number or phone call. A bad answer points you to a generic support email with no response-time commitment.",
+      },
+      { type: "h3", text: "5. Will I own my domain, hosting, and source code?" },
+      {
+        type: "p",
+        text: "A good answer is an immediate \"yes, registered in your name.\" Hesitation, or an offer to \"manage it for you\" with no option to transfer ownership, is a serious red flag.",
+      },
+      { type: "h3", text: "6. What happens if I want to switch developers later?" },
+      {
+        type: "p",
+        text: "A good answer is a straightforward explanation of how handover works — exporting code, transferring accounts. Defensiveness or refusal to discuss this suggests they intend to make it difficult on purpose.",
+      },
+      { type: "h3", text: "7. Can I update the content myself, or do I need you for every change?" },
+      {
+        type: "p",
+        text: "This isn't a trick question — either answer can be fine, but you need to know which one you're getting. A CMS-backed site lets you edit yourself; a static site is faster and cheaper but needs a developer for text or image changes.",
+      },
+      { type: "h3", text: "8. What's your payment structure?" },
+      {
+        type: "p",
+        text: "A good answer is milestone-based — commonly 50% upfront, 50% on delivery. Be cautious of anyone asking for full payment before any work begins, with no milestones in between.",
+      },
+      { type: "h3", text: "9. How will you handle SEO and mobile responsiveness?" },
+      {
+        type: "p",
+        text: "A good answer is specific — proper meta tags, fast load times, mobile-first layout, Core Web Vitals. A bad answer is a generic \"yes, we do SEO\" with no detail behind it.",
+      },
+      { type: "h3", text: "10. Can you share a reference I can actually contact?" },
+      {
+        type: "p",
+        text: "A good answer is a willingness to connect you with a past client directly. A bad answer offers only pre-written testimonials pasted on their own website, which are impossible to verify.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "None of these questions are unreasonable to ask, and any designer worth hiring will answer them without hesitation. If someone gets defensive or evasive on more than one of these, treat that as your answer — and keep looking.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the most important question to ask a web designer before hiring them?",
+        a: "Whether you can see 2–3 live websites they've actually built. A real, working portfolio is the single fastest way to judge quality and honesty before committing any money.",
+      },
+      {
+        q: "Should I pay a web designer in full upfront?",
+        a: "No. A milestone-based structure — commonly 50% upfront and 50% on delivery — protects both sides and is standard practice for legitimate freelancers and agencies in India.",
+      },
+      {
+        q: "How do I make sure I own my own website after it's built?",
+        a: "Confirm before you pay that your domain and hosting account will be registered in your name, and ask explicitly whether you'll receive full source code ownership after final payment.",
+      },
+      {
+        q: "What if a web designer refuses to answer these questions?",
+        a: "Treat that as a red flag and consider other options. A trustworthy designer will answer questions about portfolio, pricing, ownership, and timelines clearly and without hesitation.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
