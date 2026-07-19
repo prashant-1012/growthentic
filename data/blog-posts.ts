@@ -991,6 +991,242 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "what-is-a-landing-page",
+    title: "What Is a Landing Page? (And Does Your Business Need One?)",
+    category: "Tech Advice",
+    readTime: "4 min",
+    date: "November 18, 2026",
+    isoDate: "2026-11-18",
+    excerpt:
+      "\"Landing page\" gets thrown around a lot, often incorrectly. Here's what it actually means, how it's different from a homepage, and when your business genuinely needs one.",
+    quickAnswer:
+      "A landing page is a single, standalone page built around one specific goal — like capturing leads from an ad campaign — with no navigation menu to distract from that goal. It's different from a homepage, which introduces your whole business. Most Indian small businesses need one when running paid ads or promoting a single offer; it typically costs ₹6,000 and takes 3–5 days.",
+    content: [
+      {
+        type: "p",
+        text: "\"Landing page\" gets thrown around a lot, often incorrectly. Here's what it actually means, how it's different from a homepage, and when your business genuinely needs one.",
+      },
+      { type: "h2", text: "What a Landing Page Actually Is" },
+      {
+        type: "p",
+        text: "A landing page is a single page built around one goal — and nothing else. There's usually no navigation menu, because the entire point is to stop a visitor from wandering off and instead push them toward one specific action: filling a form, booking a call, or making a purchase.",
+      },
+      { type: "h2", text: "Landing Page vs. Homepage: What's Different" },
+      {
+        type: "table",
+        headers: ["", "Landing Page", "Homepage"],
+        rows: [
+          ["Goal", "One specific action", "Introduce the whole business"],
+          ["Navigation", "Minimal or none — reduces distraction", "Full menu to other pages"],
+          ["Traffic source", "Paid ads, a specific campaign, a QR code", "General visitors, search, direct"],
+          ["Content depth", "Deep on one offer", "Broad overview of everything you do"],
+          ["Typical cost in India", "₹6,000", "Part of a ₹10,000+ multi-page site"],
+        ],
+      },
+      { type: "h2", text: "When You Actually Need a Landing Page" },
+      {
+        type: "ul",
+        items: [
+          "You're running Google or Meta ads for a specific offer",
+          "You're launching a single product, event, or promotion",
+          "You want to test whether an idea gets demand before building a full website",
+          "You have a QR code on print materials that needs to point somewhere specific",
+        ],
+      },
+      { type: "h2", text: "When You Don't Need One (a Homepage Is Enough)" },
+      {
+        type: "ul",
+        items: [
+          "You want people to browse multiple things you offer, not act on one single thing",
+          "Most of your traffic comes from search or word of mouth, not a specific campaign",
+          "You're building a lasting online presence rather than running a single campaign",
+        ],
+      },
+      { type: "h2", text: "Why Landing Pages Convert Better for Ads Specifically" },
+      {
+        type: "p",
+        text: "When someone clicks an ad and lands on a full website with a navigation menu, a chunk of them wander off to \"About\" or \"Services\" and never come back to the offer that got them there. A landing page removes that exit, keeps messaging focused on the one thing that made them click, and loads faster — which also lowers your ad cost-per-click.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "Most growing businesses eventually need both: a homepage that represents the whole business for general visitors, and one or more landing pages built for specific campaigns. Neither replaces the other — they do different jobs.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a landing page and a website?",
+        a: "A landing page is a single page built around one specific goal, usually with no navigation menu. A website is a multi-page presence that introduces your whole business and lets visitors browse freely.",
+      },
+      {
+        q: "Do I need a landing page if I already have a website?",
+        a: "Yes, if you run ads or promotions — a dedicated landing page for each campaign converts better than sending ad traffic to your general homepage, since it keeps the visitor focused on one specific offer.",
+      },
+      {
+        q: "How much does a landing page cost in India?",
+        a: "A landing page typically costs around ₹6,000 in India and can be delivered in 3–5 days, since it's a single, focused page rather than a multi-page site.",
+      },
+    ],
+  },
+  {
+    slug: "static-vs-dynamic-website",
+    title: "Static vs. Dynamic Website: Which Do You Actually Need?",
+    category: "Tech Advice",
+    readTime: "5 min",
+    date: "December 2, 2026",
+    isoDate: "2026-12-02",
+    excerpt:
+      "\"Static\" and \"dynamic\" get used constantly in web development conversations, and most business owners nod along without knowing which one they actually need. Here's the honest, no-jargon breakdown.",
+    quickAnswer:
+      "A static website shows the same content to every visitor and loads extremely fast — ideal for most small businesses that don't change content daily. A dynamic website pulls content from a database and can show different information per user — needed for things like booking systems, user accounts, or real-time inventory. Most clinics, salons, and shops only need a static site; e-commerce and web apps need dynamic.",
+    content: [
+      {
+        type: "p",
+        text: "\"Static\" and \"dynamic\" get used constantly in web development conversations, and most business owners nod along without knowing which one they actually need. Here's the honest, no-jargon breakdown.",
+      },
+      { type: "h2", text: "What \"Static\" Actually Means" },
+      {
+        type: "p",
+        text: "A static website is pre-built — every page is generated once and served exactly the same way to every visitor, with no server processing happening per request. That's why static sites are so fast: there's nothing to compute when someone loads the page, just a file being delivered.",
+      },
+      { type: "h2", text: "What \"Dynamic\" Actually Means" },
+      {
+        type: "p",
+        text: "A dynamic website generates content per request, usually by pulling from a database. This is what's needed for user accounts, personalised content, an admin managing live inventory, or a booking system that has to check real-time availability before confirming a slot.",
+      },
+      { type: "h2", text: "The Honest Comparison" },
+      {
+        type: "table",
+        headers: ["Factor", "Static", "Dynamic"],
+        rows: [
+          ["Speed", "Very fast — pre-built pages", "Slower — content generated per request"],
+          ["Hosting cost", "Often free (Vercel)", "Requires a database and backend hosting"],
+          ["Security surface", "Very small — no database to attack", "Larger — database and backend need securing"],
+          ["Self-updating content", "Needs a rebuild/deploy, or a CMS", "Built in — content changes without a redeploy"],
+          ["Best for", "Business sites, clinics, salons, restaurants", "E-commerce, booking systems, member portals, dashboards"],
+        ],
+      },
+      { type: "h2", text: "When Static Is Enough (Most Small Businesses)" },
+      {
+        type: "ul",
+        items: [
+          "Your business information rarely changes structurally — services, hours, location, pricing",
+          "You don't need user accounts or logins for visitors",
+          "You don't need to show real-time inventory or live availability",
+        ],
+      },
+      { type: "h2", text: "When You Actually Need Dynamic" },
+      {
+        type: "ul",
+        items: [
+          "E-commerce with live inventory that changes as orders come in",
+          "A booking system that needs to check real-time availability before confirming",
+          "User accounts or a login area for customers or staff",
+          "An admin dashboard for managing content, orders, or bookings",
+        ],
+      },
+      { type: "h2", text: "The Middle Ground: Static with a CMS" },
+      {
+        type: "p",
+        text: "There's a hybrid that suits a lot of content-heavy small businesses well: a Next.js site that's built as static pages but pulls its content from a headless CMS (like Sanity) at build time. You get near-static speed and security, but can still update text and images yourself without needing a developer for every small change.",
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "Most clinics, salons, restaurants, and service businesses only need a static (or static-with-CMS) website — it's faster, cheaper to host, and more secure. Reach for dynamic only when your business genuinely needs accounts, live inventory, or real-time logic, since it adds real cost and complexity that isn't worth carrying otherwise.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is a static or dynamic website better for a small business?",
+        a: "Static is usually better for small businesses — it's faster, cheaper to host, and more secure. Dynamic is only necessary if you need user accounts, live inventory, or a real-time booking system.",
+      },
+      {
+        q: "Can a static website have a contact form?",
+        a: "Yes. A contact form on a static site typically submits to a third-party service (like a form handler or email API) rather than a custom backend, so you get form functionality without needing a fully dynamic site.",
+      },
+      {
+        q: "What is a headless CMS and do I need one?",
+        a: "A headless CMS lets you edit content through a dashboard while your website stays static and fast, generating pages from that content at build time. It's worth it if you want to update text and images yourself without involving a developer for every change.",
+      },
+    ],
+  },
+  {
+    slug: "how-long-does-it-take-to-build-a-website",
+    title: "How Long Does It Take to Build a Website? Realistic 2026 Timelines",
+    category: "Pricing & Planning",
+    readTime: "5 min",
+    date: "December 16, 2026",
+    isoDate: "2026-12-16",
+    excerpt:
+      "\"How fast can you build my website?\" is one of the first questions every client asks. Here's an honest breakdown of realistic timelines by project type — and what actually causes most delays.",
+    quickAnswer:
+      "A landing page can be built in 3–5 days, a full business website in 7–14 days, an e-commerce store in 14–21 days, and a custom web app in 21–30 days. The biggest factor that blows past these timelines isn't the developer — it's how quickly the client provides content, feedback, and approvals.",
+    content: [
+      {
+        type: "p",
+        text: "\"How fast can you build my website?\" is one of the first questions every client asks. Here's an honest breakdown of realistic timelines by project type — and what actually causes most delays.",
+      },
+      { type: "h2", text: "Realistic Timelines by Project Type" },
+      {
+        type: "table",
+        headers: ["Project Type", "Typical Timeline"],
+        rows: [
+          ["Landing page", "3–5 days"],
+          ["Business website (5–8 pages)", "7–14 days"],
+          ["Website redesign", "5–7 days"],
+          ["E-commerce store", "14–21 days"],
+          ["Dynamic web app", "21–30 days"],
+        ],
+      },
+      { type: "h2", text: "What Actually Determines the Timeline" },
+      {
+        type: "ul",
+        items: [
+          "Number of pages and features — more scope simply takes more build time, no way around it",
+          "How quickly you provide content — text, photos, logo; a project stalls the moment a client goes quiet waiting to gather these",
+          "Number of revision rounds — each round adds days, especially if feedback trickles in piece by piece instead of arriving all at once",
+          "Third-party integrations — a payment gateway or booking system takes longer to test properly than a simple contact form",
+          "How fast you respond to questions — a single unanswered WhatsApp message can quietly add a day to the timeline",
+        ],
+      },
+      { type: "h2", text: "The #1 Cause of Delays (And It's Rarely the Developer)" },
+      {
+        type: "p",
+        text: "In practice, most delays trace back to waiting on the client, not the build itself — waiting for photos, waiting for approved copy, waiting for feedback on a design draft. The fix is simple: have your content organised before the project starts, and give feedback in one consolidated pass instead of trickling in over several days.",
+      },
+      { type: "h2", text: "How to Get Your Website Built Faster" },
+      {
+        type: "ul",
+        items: [
+          "Have your logo, photos, and text ready before the project starts, not partway through",
+          "Give all your feedback in one message, not five separate ones spread over a week",
+          "Approve or reject quickly — every day of silence is a day added to the timeline",
+          "Choose a static or Next.js build over a plugin-heavy CMS if speed matters more than self-editing",
+        ],
+      },
+      { type: "h2", text: "The Bottom Line" },
+      {
+        type: "p",
+        text: "The real bottleneck on most projects is communication speed, not development speed. A business that shows up organised and responds quickly can realistically get a decent website live in under two weeks — the timelines above assume exactly that.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does it take to build a small business website in India?",
+        a: "A full business website typically takes 7–14 days, while a simpler landing page can be ready in 3–5 days. E-commerce stores and custom web apps take longer, from 2 to 6 weeks depending on complexity.",
+      },
+      {
+        q: "Why is my website taking longer than the quoted timeline?",
+        a: "Most delays come from waiting on the client — for content, photos, or feedback — rather than the build itself. Slow responses and feedback that arrives in multiple small rounds are the most common causes.",
+      },
+      {
+        q: "What can I do to speed up my website project?",
+        a: "Have your logo, photos, and text ready before the project starts, give all your feedback in one consolidated message, and respond quickly to questions — each of these directly shortens the actual delivery time.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
