@@ -1,33 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const faqs = [
-  {
-    q: "How long does a project take?",
-    a: "It depends on the scope. A landing page can be ready in 3–5 days. A full business website typically takes 7–14 days. E-commerce and custom web apps take 3–6 weeks. We always share a clear timeline before we start.",
-  },
-  {
-    q: "Do you provide hosting and domain support?",
-    a: "Yes. We help you set up hosting (typically Vercel or a shared host) and register your domain. Ongoing hosting costs are usually minimal and we'll walk you through everything.",
-  },
-  {
-    q: "Can I update the site myself after launch?",
-    a: "Absolutely. If you want a CMS (like WordPress or Sanity), we'll build it in from the start. For simpler sites, we provide clear documentation and offer affordable monthly maintenance if you'd prefer we handle updates.",
-  },
-  {
-    q: "Do you work with businesses outside Pune?",
-    a: "Yes, we work with clients across India — fully remote. All communication happens over WhatsApp and video calls, and it works seamlessly.",
-  },
-  {
-    q: "What happens if I need changes after the website launches?",
-    a: "Every project includes a post-launch support window. Beyond that, we offer affordable maintenance packages or one-off change requests — no nickel-and-diming.",
-  },
-  {
-    q: "Do you offer EMI or payment in installments?",
-    a: "Yes. We typically work on a 50% advance / 50% on delivery structure. For larger projects, we can discuss a milestone-based payment plan that works for both sides.",
-  },
-];
+import { faqs } from "./faq-data";
 
 export function FaqAccordion() {
   const [open, setOpen] = useState<number | null>(null);

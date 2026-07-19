@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatWeBuild } from "./what-we-build";
 import { FaqAccordion } from "./faq-accordion";
+import { faqs } from "./faq-data";
 
 export const metadata: Metadata = {
   title: "Web Design & Development Services + Pricing | Growthentic",
@@ -24,9 +25,26 @@ export const metadata: Metadata = {
   },
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <ServicesHero />
       <ServiceCards />
       <WhatWeBuild />
