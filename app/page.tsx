@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { StatsSection } from "@/components/stats-counter";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 
@@ -219,7 +220,7 @@ function HeroSection() {
           </div>
 
           {/* ── Right: Floating browser mockup cards ── */}
-          <div className="relative flex items-center justify-center lg:justify-end min-h-[420px]">
+          <div className="group relative flex items-center justify-center lg:justify-end min-h-[420px]">
 
             {/* Floating tech pill badges */}
             <FloatingPill label="Next.js" color="bg-foreground text-background" style={{ top: "6%", left: "2%", animationDelay: "0s" }} />
@@ -229,13 +230,13 @@ function HeroSection() {
 
             {/* Card 2 — back (Velour Studios) */}
             <div
-              className="absolute w-[300px] sm:w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card transition-transform hover:scale-105"
-              style={{ transform: "rotate(4deg) translate(28px, 16px)", zIndex: 1 }}
+              className="absolute w-[300px] sm:w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card rotate-[7deg] translate-x-[64px] translate-y-[36px] transition-transform duration-500 ease-out group-hover:rotate-[11deg] group-hover:translate-x-[104px] group-hover:translate-y-[58px]"
+              style={{ zIndex: 1 }}
               aria-hidden="true"
             >
               <BrowserMockup
                 url="velourstudios.vercel.app"
-                gradient="from-[#1a0a2e] via-[#2d1054] to-[#6b21a8]"
+                image="/work/velour-studios.webp"
                 label="Velour Studios"
                 sublabel="Luxury Beauty & Salon"
                 accent="#d946ef"
@@ -244,12 +245,12 @@ function HeroSection() {
 
             {/* Card 1 — front (Smile Care Studio) */}
             <div
-              className="relative w-[300px] sm:w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card transition-transform hover:scale-105 hover:-rotate-1"
-              style={{ transform: "rotate(-2deg)", zIndex: 2 }}
+              className="relative w-[300px] sm:w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card rotate-[-3deg] transition-transform duration-500 ease-out group-hover:rotate-[-6deg] group-hover:-translate-x-[10px] group-hover:translate-y-[6px]"
+              style={{ zIndex: 2 }}
             >
               <BrowserMockup
                 url="smile-care-studio.vercel.app"
-                gradient="from-[#0c2a4a] via-[#0d3a6e] to-[#1e5fa8]"
+                image="/work/smile-care-studio.webp"
                 label="Smile Care Studio"
                 sublabel="Premium Dental Clinic"
                 accent="#38bdf8"
@@ -299,13 +300,13 @@ function FloatingPill({
 
 function BrowserMockup({
   url,
-  gradient,
+  image,
   label,
   sublabel,
   accent,
 }: {
   url: string;
-  gradient: string;
+  image: string;
   label: string;
   sublabel: string;
   accent: string;
@@ -325,35 +326,15 @@ function BrowserMockup({
         </div>
       </div>
 
-      {/* Page preview */}
-      <div className={`relative h-48 bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-3 p-6`}>
-        {/* Fake nav bar inside mockup */}
-        <div className="absolute top-3 left-4 right-4 flex items-center justify-between">
-          <div className="h-2 w-16 rounded-full bg-white/20" />
-          <div className="flex gap-2">
-            <div className="h-1.5 w-8 rounded-full bg-white/15" />
-            <div className="h-1.5 w-8 rounded-full bg-white/15" />
-            <div className="h-1.5 w-8 rounded-full bg-white/15" />
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="text-center mt-4">
-          <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">{sublabel}</p>
-          <p className="text-white font-bold text-sm leading-tight">{label}</p>
-          <div className="mt-2 h-1 w-12 rounded-full mx-auto" style={{ backgroundColor: accent }} />
-        </div>
-
-        {/* Fake content blocks */}
-        <div className="flex flex-col gap-1.5 w-full mt-2">
-          <div className="h-1.5 rounded-full bg-white/10 w-3/4 mx-auto" />
-          <div className="h-1.5 rounded-full bg-white/10 w-1/2 mx-auto" />
-        </div>
-
-        {/* CTA button */}
-        <div className="mt-1 rounded-lg px-4 py-1.5 text-[10px] font-semibold text-white" style={{ backgroundColor: accent + "33", border: `1px solid ${accent}55` }}>
-          Book Appointment
-        </div>
+      {/* Page preview — real screenshot */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-muted">
+        <Image
+          src={image}
+          alt={`${label} — ${sublabel} website homepage`}
+          fill
+          sizes="340px"
+          className="object-contain"
+        />
       </div>
 
       {/* Footer of card */}
@@ -665,7 +646,7 @@ const featuredProjects = [
     industry: "Healthcare",
     liveUrl: "https://smile-care-studio.vercel.app/",
     internalUrl: "/work",
-    gradient: "from-[#0c2a4a] via-[#0d3a6e] to-[#1e5fa8]",
+    image: "/work/smile-care-studio.webp",
     accentColor: "#38bdf8",
     stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     description:
@@ -680,7 +661,7 @@ const featuredProjects = [
     industry: "Beauty & Wellness",
     liveUrl: "https://velourstudios.vercel.app/",
     internalUrl: "/work",
-    gradient: "from-[#1a0a2e] via-[#2d1054] to-[#6b21a8]",
+    image: "/work/velour-studios.webp",
     accentColor: "#d946ef",
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     description:
@@ -692,12 +673,12 @@ const featuredProjects = [
 ];
 
 function WorkBrowserMockup({
-  gradient,
+  image,
   accentColor,
   name,
   type,
 }: {
-  gradient: string;
+  image: string;
   accentColor: string;
   name: string;
   type: string;
@@ -716,43 +697,20 @@ function WorkBrowserMockup({
           <span className="text-[10px] text-muted-foreground font-mono truncate">{name.toLowerCase().replace(/\s+/g, "-")}.vercel.app</span>
         </div>
       </div>
-      {/* Page preview */}
-      <div className={`relative bg-gradient-to-br ${gradient} h-52 flex flex-col overflow-hidden`}>
-        <div className="flex items-center justify-between px-5 py-3">
-          <div className="h-2 w-20 rounded-full bg-white/25" />
-          <div className="flex gap-3">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-1.5 w-7 rounded-full bg-white/15" />
-            ))}
-            <div className="h-5 w-14 rounded-md bg-white/20" />
-          </div>
-        </div>
-        <div className="flex flex-col items-center justify-center flex-1 gap-3 px-6 pb-4">
-          <div className="text-center">
-            <p className="text-white/40 text-[8px] uppercase tracking-[0.2em] mb-2">{type}</p>
-            <p className="text-white font-bold text-sm leading-tight mb-3">{name}</p>
-            <div className="h-0.5 w-10 rounded-full mx-auto mb-3" style={{ backgroundColor: accentColor }} />
-          </div>
-          <div className="flex flex-col gap-2 w-full max-w-[160px]">
-            <div className="h-1.5 rounded-full bg-white/10 w-full" />
-            <div className="h-1.5 rounded-full bg-white/10 w-4/5 mx-auto" />
-            <div className="h-1.5 rounded-full bg-white/10 w-3/5 mx-auto" />
-          </div>
-          <div
-            className="mt-1 rounded-lg px-4 py-1.5 text-[10px] font-semibold text-white"
-            style={{ backgroundColor: accentColor + "30", border: `1px solid ${accentColor}50` }}
-          >
-            Book Appointment
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-px border-t" style={{ borderColor: accentColor + "25" }}>
-          {["Services", "Team", "Gallery"].map((label) => (
-            <div key={label} className="flex flex-col items-center gap-1 py-2 bg-black/20">
-              <div className="h-3 w-3 rounded-sm bg-white/20" />
-              <span className="text-[8px] text-white/40">{label}</span>
-            </div>
-          ))}
-        </div>
+      {/* Page preview — real screenshot */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-muted">
+        <Image
+          src={image}
+          alt={`${name} — ${type} homepage`}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className="object-contain"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px"
+          style={{ backgroundColor: accentColor + "60" }}
+        />
       </div>
     </div>
   );
@@ -797,7 +755,7 @@ function FeaturedWorkSection() {
               {/* Browser mockup */}
               <div className="p-5 pb-0">
                 <WorkBrowserMockup
-                  gradient={project.gradient}
+                  image={project.image}
                   accentColor={project.accentColor}
                   name={project.name}
                   type={project.type}

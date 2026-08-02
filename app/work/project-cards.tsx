@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ClientTab } from "./filter-tabs";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -8,15 +9,11 @@ interface ClientProject {
   type: string;
   industry: ClientTab;
   accentColor: string;
-  gradient: string;
-  darkBg: string;
-  mockupType: "dental" | "salon" | "spice";
+  image: string;
   liveUrl: string;
   stack: string[];
-  problem: string;
-  solution: string;
-  result: string;
-  features: string[];
+  impact: string;
+  tags: string[];
 }
 
 interface PersonalProject {
@@ -25,12 +22,11 @@ interface PersonalProject {
   about: string;
   category: string;
   accentColor: string;
-  darkBg: string;
-  mockupType: "dashboard" | "crm" | "directory";
+  image: string;
   liveUrl: string;
   githubUrl?: string;
   stack: string[];
-  highlights: string[];
+  tags: string[];
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -41,73 +37,36 @@ const clientProjects: ClientProject[] = [
     type: "Premium Dental Clinic Website",
     industry: "Healthcare",
     accentColor: "#38BDF8",
-    gradient: "from-blue-500/20 via-cyan-400/10 to-sky-300/5",
-    darkBg: "#040e1a",
-    mockupType: "dental",
+    image: "/work/smile-care-studio.webp",
     liveUrl: "https://smile-care-studio.vercel.app/",
     stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    problem:
-      "The clinic had no online presence and was losing patients to competitors who already had websites.",
-    solution:
-      "Built a full 6-page site with a multi-step appointment booking form, team profiles, and a services breakdown that builds patient trust before they even walk in.",
-    result:
-      "Clinic reports a measurable uptick in online appointment requests within the first month of launch.",
-    features: [
-      "Dark / light mode toggle",
-      "Scroll-triggered animations",
-      "6-page layout — Home, About, Services, Team, Gallery, Contact",
-      "Multi-step appointment booking system",
-      "Patient testimonials section",
-    ],
+    impact:
+      "No website meant losing patients to competitors — we built a 6-page site with multi-step booking and team profiles, and online appointment requests rose within the first month.",
+    tags: ["Dark / Light Mode", "Online Booking", "6 Pages", "Scroll Animations"],
   },
   {
     name: "Velour Studios",
     type: "Luxury Beauty & Salon Website",
     industry: "Beauty & Wellness",
     accentColor: "#D946EF",
-    gradient: "from-purple-500/20 via-pink-400/10 to-rose-300/5",
-    darkBg: "#0d0414",
-    mockupType: "salon",
+    image: "/work/velour-studios.webp",
     liveUrl: "https://velourstudios.vercel.app/",
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    problem:
-      "The salon had a dated website that didn't reflect the premium experience they offered in person.",
-    solution:
-      "Designed a luxury-feel site with a curated gallery, service menu, and a sleek multi-step booking form that matches the brand's high-end positioning.",
-    result:
-      "Instagram following grew as customers started sharing the website link, and booking enquiries shifted from phone to online.",
-    features: [
-      "Dark / light theme toggle",
-      "Gallery with lightbox",
-      "8-page layout — Home, Services, Team, Gallery, Pricing, Blog, Booking, Contact",
-      "Multi-step booking form",
-      "Service menu with pricing & team profiles",
-    ],
+    impact:
+      "Their old site undersold the in-person experience — we built a gallery-driven, luxury-feel site with online booking, and enquiries shifted from phone calls to the web.",
+    tags: ["Gallery Lightbox", "Online Booking", "8 Pages", "Team Profiles"],
   },
   {
     name: "Malabar Reserve",
     type: "Premium Spice Export Website",
     industry: "Food & Export",
     accentColor: "#C9A227",
-    gradient: "from-amber-600/20 via-yellow-600/10 to-emerald-900/5",
-    darkBg: "#0f1a12",
-    mockupType: "spice",
+    image: "/work/malabar-reserve.webp",
     liveUrl: "https://www.malabarreserve.co/",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    problem:
-      "Malabar Reserve exports GI-tagged Indian spices worldwide, but had no online presence that matched that credibility — international buyers had no way to verify sourcing standards or request a quote without a trade fair or a PDF catalogue.",
-    solution:
-      "Built a full export-focused website with a heritage-driven brand story, a dedicated showcase for their three core spices, a 4-step export process breakdown, and an industries-served segmentation targeting importers, distributors, and private-label buyers.",
-    result:
-      "Gives international buyers a credible, quote-ready first touchpoint online — replacing reliance on trade fairs and static catalogues with a site built to convert cold inbound interest into quote requests.",
-    features: [
-      "Heritage-driven brand identity — deep green & gold palette",
-      "6-page layout — Home, Products, Industries, About, Contact, Product detail pages",
-      "Dedicated showcase for Black Pepper, Cardamom, and Turmeric",
-      "4-step export process timeline with quality-assurance messaging",
-      "Industries-served segmentation for 6 buyer types",
-      "WhatsApp + quote-request contact funnel",
-    ],
+    impact:
+      "No online presence matched their export credibility — we built a heritage-driven site with product showcases and a quote funnel, replacing trade fairs and PDF catalogues as their first touchpoint.",
+    tags: ["Product Showcase", "Export Process", "Quote Funnel", "6 Pages"],
   },
 ];
 
@@ -119,18 +78,10 @@ const personalProjects: PersonalProject[] = [
       "Production-grade analytics platform built to demonstrate the full complexity of a real SaaS product — multi-tenancy, role-based access, per-tenant branding, and live data polling.",
     category: "SaaS / Dashboard",
     accentColor: "#10B981",
-    darkBg: "#0a1f18",
-    mockupType: "dashboard",
+    image: "/work/analytiq.webp",
     liveUrl: "https://analytiq-dashboard.vercel.app",
     stack: ["Next.js 16", "TypeScript", "Redux Toolkit", "TanStack Query", "Recharts", "NextAuth.js", "shadcn/ui", "Tailwind CSS"],
-    highlights: [
-      "Multi-tenant architecture with org-scoped data isolation",
-      "RBAC with 4 roles — Admin, Manager, Analyst, Viewer",
-      "Per-tenant branding & white-labelling",
-      "KPI cards with sparklines + drill-down event explorer",
-      "30-second live polling with optimistic UI updates",
-      "Feature usage analytics & cohort tracking",
-    ],
+    tags: ["Multi-Tenant", "RBAC — 4 Roles", "Live Polling", "Cohort Analytics"],
   },
   {
     name: "Mini CRM Dashboard",
@@ -139,17 +90,10 @@ const personalProjects: PersonalProject[] = [
       "A clean, feature-based CRM dashboard built to prove out the kind of architecture we use when building custom web apps for clients — scalable, testable, and fast.",
     category: "CRM / Web App",
     accentColor: "#F59E0B",
-    darkBg: "#1a1400",
-    mockupType: "crm",
+    image: "/work/mini-crm.webp",
     liveUrl: "https://mini-crm-dashboard-one.vercel.app",
     stack: ["React", "TypeScript", "Redux Toolkit", "TanStack Table", "Recharts", "Axios", "Tailwind CSS"],
-    highlights: [
-      "Lead management with dynamic data tables & sorting",
-      "KPI analytics with interactive charts",
-      "Persistent state across sessions",
-      "Clean feature-based architecture (UI / logic / API layers)",
-      "Fully responsive across all breakpoints",
-    ],
+    tags: ["Lead Management", "KPI Analytics", "Persistent State", "Fully Responsive"],
   },
   {
     name: "Cognivoya",
@@ -158,18 +102,10 @@ const personalProjects: PersonalProject[] = [
       "A curated directory of 60+ AI tools with a focus on UX polish — command palette search, animated transitions, skeleton loaders, and PWA support for a native-app feel.",
     category: "Directory / PWA",
     accentColor: "#8B5CF6",
-    darkBg: "#0d0a1a",
-    mockupType: "directory",
+    image: "/work/cognivoya.webp",
     liveUrl: "https://cognivoya.vercel.app",
     stack: ["React 19", "Redux Toolkit", "RTK Query", "React Router v6", "Framer Motion", "Radix UI", "Tailwind CSS v4", "PWA"],
-    highlights: [
-      "60+ curated AI tools with category filtering",
-      "⌘K command palette for instant search",
-      "Bookmark favourites with persistent state",
-      "Smooth page transitions + skeleton loaders",
-      "Full PWA support — installable on any device",
-      "Detailed tool pages with external links",
-    ],
+    tags: ["60+ AI Tools", "⌘K Search", "PWA Support", "Bookmarking"],
   },
 ];
 
@@ -198,174 +134,32 @@ export function ProjectCards({ filter }: { filter: ClientTab }) {
   );
 }
 
-// ─── Client mockups ───────────────────────────────────────────────────────────
-
-function DentalMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Nav */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-full" style={{ backgroundColor: accentColor + "80" }} />
-          <div className="h-1.5 w-20 rounded-full bg-white/25" />
-        </div>
-        <div className="flex items-center gap-3">
-          {["Home","Services","Team","Contact"].map((item, i) => (
-            <div key={item} className="text-[7px]" style={{ color: i === 0 ? accentColor : "rgba(255,255,255,0.3)" }}>{item}</div>
-          ))}
-          <div className="h-5 w-16 rounded-lg text-[7px] font-semibold flex items-center justify-center" style={{ backgroundColor: accentColor, color: "#000" }}>
-            Book Now
-          </div>
-        </div>
-      </div>
-      {/* Hero */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-2.5 px-6 py-4" style={{ background: `radial-gradient(ellipse at 60% 40%, ${accentColor}18 0%, transparent 70%)` }}>
-        <div className="text-[7px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>Premium Dental Care</div>
-        <div className="text-center">
-          <div className="h-3 w-48 rounded-full bg-white/80 mx-auto mb-1.5" />
-          <div className="h-2 w-36 rounded-full bg-white/30 mx-auto mb-0.5" />
-          <div className="h-2 w-28 rounded-full bg-white/20 mx-auto" />
-        </div>
-        <div className="flex gap-2 mt-1">
-          <div className="h-6 w-24 rounded-lg flex items-center justify-center text-[7px] font-bold" style={{ backgroundColor: accentColor, color: "#000" }}>
-            Book Appointment
-          </div>
-          <div className="h-6 w-20 rounded-lg flex items-center justify-center text-[7px]" style={{ border: `1px solid ${accentColor}50`, color: accentColor }}>
-            Our Services
-          </div>
-        </div>
-      </div>
-      {/* Services strip */}
-      <div className="grid grid-cols-3 border-t border-white/5">
-        {[["🦷","Implants"],["✨","Whitening"],["🔬","Checkup"]].map(([icon, label]) => (
-          <div key={label} className="flex flex-col items-center gap-1 py-2 border-r border-white/5 last:border-r-0" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
-            <div className="text-[10px]">{icon}</div>
-            <div className="text-[6px] text-white/40">{label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function SalonMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Nav */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="h-1.5 w-24 rounded-full bg-white/30" />
-        </div>
-        <div className="flex items-center gap-3">
-          {["Services","Gallery","Pricing","Book"].map((item, i) => (
-            <div key={item} className="text-[7px]" style={{ color: i === 3 ? accentColor : "rgba(255,255,255,0.3)" }}>{item}</div>
-          ))}
-        </div>
-      </div>
-      {/* Hero — Ken Burns feel */}
-      <div className="relative flex-1 flex flex-col items-center justify-center gap-2 px-6 py-2 overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${darkBg} 0%, #1a0628 50%, #0d0414 100%)` }}>
-        {/* Decorative circles */}
-        <div className="absolute top-2 right-4 h-16 w-16 rounded-full opacity-20" style={{ background: `radial-gradient(circle, ${accentColor}, transparent)` }} />
-        <div className="absolute bottom-2 left-2 h-10 w-10 rounded-full opacity-10" style={{ background: `radial-gradient(circle, ${accentColor}, transparent)` }} />
-        <div className="text-[6px] uppercase tracking-[0.25em] font-semibold mb-1" style={{ color: accentColor }}>Luxury Beauty Studio</div>
-        <div className="text-center z-10">
-          <div className="h-2.5 w-44 rounded-full bg-white/80 mx-auto mb-1" />
-          <div className="h-1.5 w-32 rounded-full bg-white/25 mx-auto" />
-        </div>
-        <div className="flex gap-2 mt-1 z-10">
-          <div className="h-6 w-20 rounded-full flex items-center justify-center text-[7px] font-bold" style={{ backgroundColor: accentColor, color: "#fff" }}>
-            Book Now
-          </div>
-          <div className="h-6 w-16 rounded-full flex items-center justify-center text-[7px]" style={{ border: `1px solid ${accentColor}50`, color: accentColor }}>
-            View Work
-          </div>
-        </div>
-      </div>
-      {/* Gallery strip */}
-      <div className="grid grid-cols-4 gap-px p-2 border-t border-white/5" style={{ backgroundColor: "rgba(255,255,255,0.02)" }}>
-        {[accentColor + "40", accentColor + "25", accentColor + "35", accentColor + "20"].map((bg, i) => (
-          <div key={i} className="h-8 rounded-md" style={{ backgroundColor: bg }} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function SpiceExportMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  const products = [
-    { label: "Black Pepper", color: "#2b2b2b" },
-    { label: "Cardamom", color: "#6b8f3f" },
-    { label: "Turmeric", color: "#d99a2b" },
-  ];
-
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Nav */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-full" style={{ backgroundColor: accentColor + "80" }} />
-          <div className="h-1.5 w-20 rounded-full bg-white/25" />
-        </div>
-        <div className="flex items-center gap-3">
-          {["Home", "Products", "Industries", "About"].map((item, i) => (
-            <div key={item} className="text-[7px]" style={{ color: i === 0 ? accentColor : "rgba(255,255,255,0.3)" }}>{item}</div>
-          ))}
-          <div className="h-5 w-20 rounded-md text-[7px] font-semibold flex items-center justify-center" style={{ backgroundColor: accentColor, color: "#1a1200" }}>
-            Request Quote
-          </div>
-        </div>
-      </div>
-      {/* Hero */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-2.5 px-6 py-4" style={{ background: `radial-gradient(ellipse at 50% 30%, ${accentColor}18 0%, transparent 70%)` }}>
-        <div className="text-[7px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>Exporting Authentic Indian Spices</div>
-        <div className="text-center">
-          <div className="h-3 w-48 rounded-full bg-white/80 mx-auto mb-1.5" />
-          <div className="h-2 w-40 rounded-full bg-white/30 mx-auto mb-0.5" />
-          <div className="h-2 w-32 rounded-full bg-white/20 mx-auto" />
-        </div>
-        <div className="flex gap-2 mt-1">
-          <div className="h-6 w-24 rounded-md flex items-center justify-center text-[7px] font-bold" style={{ backgroundColor: accentColor, color: "#1a1200" }}>
-            Request a Quote
-          </div>
-          <div className="h-6 w-24 rounded-md flex items-center justify-center text-[7px]" style={{ border: `1px solid ${accentColor}50`, color: accentColor }}>
-            Explore Products
-          </div>
-        </div>
-      </div>
-      {/* Product strip */}
-      <div className="grid grid-cols-3 border-t border-white/5">
-        {products.map((product) => (
-          <div key={product.label} className="flex flex-col items-center gap-1 py-2 border-r border-white/5 last:border-r-0" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
-            <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: product.color }} />
-            <div className="text-[6px] text-white/40">{product.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+// ─── Client browser mockup — real screenshot ──────────────────────────────────
 
 function ClientBrowserMockup({ project }: { project: ClientProject }) {
   return (
-    <div className="flex flex-col rounded-xl overflow-hidden border border-white/10 shadow-xl h-52">
+    <div className="flex flex-col rounded-xl overflow-hidden border border-border shadow-xl">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 flex-shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-        <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-        <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-        <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-        <div className="ml-2 flex-1 rounded-md px-2.5 py-1 flex items-center gap-1.5" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.08)" }}>
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <span className="text-[9px] font-mono" style={{ color: "rgba(255,255,255,0.35)" }}>
+      <div className="flex items-center gap-2 bg-muted px-3 py-2 border-b border-border flex-shrink-0">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
+        <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" />
+        <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
+        <div className="ml-2 flex-1 rounded-md bg-background/60 border border-border px-2.5 py-1 flex items-center gap-1.5">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-green-500 flex-shrink-0" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span className="text-[9px] font-mono text-muted-foreground truncate">
             {project.liveUrl.replace("https://", "")}
           </span>
         </div>
       </div>
-      {/* App preview */}
-      <div className="flex-1 overflow-hidden">
-        {project.mockupType === "dental" && <DentalMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
-        {project.mockupType === "salon"  && <SalonMockup  accentColor={project.accentColor} darkBg={project.darkBg} />}
-        {project.mockupType === "spice"  && <SpiceExportMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
+      {/* App preview — real screenshot, sized to actually show the design */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-muted">
+        <Image
+          src={project.image}
+          alt={`${project.name} — ${project.type} homepage`}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className="object-contain"
+        />
       </div>
     </div>
   );
@@ -385,7 +179,7 @@ function ClientProjectCard({ project }: { project: ClientProject }) {
         <ClientBrowserMockup project={project} />
       </div>
 
-      <div className="flex flex-col gap-5 p-6">
+      <div className="flex flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <span
@@ -402,31 +196,19 @@ function ClientProjectCard({ project }: { project: ClientProject }) {
           <div className="mt-1 h-3 w-3 rounded-full flex-shrink-0" style={{ backgroundColor: project.accentColor }} />
         </div>
 
-        <dl className="flex flex-col gap-3 rounded-xl border border-border bg-muted/30 p-4 text-sm">
-          {(
-            [
-              ["Problem", project.problem],
-              ["Solution", project.solution],
-              ["Result", project.result],
-            ] as [string, string][]
-          ).map(([label, text]) => (
-            <div key={label}>
-              <dt className="mb-0.5 font-semibold text-foreground">{label}</dt>
-              <dd className="text-muted-foreground leading-relaxed">{text}</dd>
-            </div>
-          ))}
-        </dl>
+        <p className="text-sm text-muted-foreground leading-relaxed">{project.impact}</p>
 
-        <ul className="flex flex-col gap-1.5">
-          {project.features.map((f) => (
-            <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              {f}
-            </li>
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-1 text-[11px] font-semibold"
+              style={{ backgroundColor: `${project.accentColor}12`, color: project.accentColor }}
+            >
+              {tag}
+            </span>
           ))}
-        </ul>
+        </div>
 
         <div className="flex flex-wrap gap-2">
           {project.stack.map((tech) => (
@@ -453,231 +235,32 @@ function ClientProjectCard({ project }: { project: ClientProject }) {
   );
 }
 
-// ─── Personal project mockups ─────────────────────────────────────────────────
-
-function DashboardMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Top nav */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded" style={{ backgroundColor: accentColor + "60" }} />
-          <div className="h-2 w-16 rounded-full bg-white/20" />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="h-2 w-10 rounded-full bg-white/10" />
-          <div className="h-5 w-5 rounded-full bg-white/15" />
-        </div>
-      </div>
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <div className="w-10 border-r border-white/5 flex flex-col items-center gap-3 py-3">
-          {[1,2,3,4].map((i) => (
-            <div key={i} className="h-4 w-4 rounded" style={{ backgroundColor: i === 1 ? accentColor + "80" : "rgba(255,255,255,0.08)" }} />
-          ))}
-        </div>
-        {/* Main */}
-        <div className="flex-1 p-3 flex flex-col gap-2.5 overflow-hidden">
-          {/* KPI row */}
-          <div className="grid grid-cols-3 gap-2">
-            {["24.8K", "1,204", "89%"].map((val, i) => (
-              <div key={i} className="rounded-lg p-2" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="text-[8px] font-bold" style={{ color: accentColor }}>{val}</div>
-                <div className="h-1 w-8 rounded-full bg-white/10 mt-1" />
-              </div>
-            ))}
-          </div>
-          {/* Chart area */}
-          <div className="flex-1 rounded-lg p-2.5 flex flex-col gap-1.5" style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-            <div className="h-1.5 w-16 rounded-full bg-white/15" />
-            <div className="flex-1 flex items-end gap-1 px-1 pt-2">
-              {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-                <div
-                  key={i}
-                  className="flex-1 rounded-t"
-                  style={{
-                    height: `${h}%`,
-                    backgroundColor: i === 10 ? accentColor : accentColor + "30",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-          {/* Bottom row */}
-          <div className="grid grid-cols-2 gap-2">
-            <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-              <div className="h-1.5 w-10 rounded-full bg-white/15 mb-1.5" />
-              <div className="flex items-center gap-1">
-                <div className="h-6 w-6 rounded-full" style={{ background: `conic-gradient(${accentColor} 0% 68%, rgba(255,255,255,0.1) 68% 100%)` }} />
-                <div className="text-[7px] font-bold text-white/60">68%</div>
-              </div>
-            </div>
-            <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-              <div className="h-1.5 w-12 rounded-full bg-white/15 mb-1.5" />
-              {[70, 45, 85].map((w, i) => (
-                <div key={i} className="flex items-center gap-1 mb-1">
-                  <div className="h-1 rounded-full" style={{ width: `${w}%`, backgroundColor: accentColor + "70" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CRMMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  const rows = [
-    { name: "Priya S.", status: "New", score: 92 },
-    { name: "Rahul M.", status: "Active", score: 78 },
-    { name: "Anika D.", status: "Closed", score: 55 },
-    { name: "Sanjay K.", status: "Active", score: 88 },
-  ];
-  const statusColor: Record<string, string> = { New: "#10B981", Active: accentColor, Closed: "#6B7280" };
-
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div className="h-2 w-16 rounded-full bg-white/25" />
-          <div className="flex gap-2">
-            {["Leads", "Pipeline", "Reports"].map((t, i) => (
-              <div key={t} className="px-2 py-0.5 rounded text-[7px]" style={{ backgroundColor: i === 0 ? accentColor + "30" : "transparent", color: i === 0 ? accentColor : "rgba(255,255,255,0.3)" }}>
-                {t}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="h-5 w-14 rounded-md" style={{ backgroundColor: accentColor + "40" }} />
-      </div>
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <div className="w-10 border-r border-white/5 flex flex-col items-center gap-3 py-3">
-          {[1,2,3,4,5].map((i) => (
-            <div key={i} className="h-4 w-4 rounded" style={{ backgroundColor: i === 1 ? accentColor + "60" : "rgba(255,255,255,0.06)" }} />
-          ))}
-        </div>
-        {/* Table area */}
-        <div className="flex-1 p-3 flex flex-col gap-2 overflow-hidden">
-          {/* KPI strip */}
-          <div className="grid grid-cols-3 gap-1.5">
-            {[["142", "Total Leads"], ["38", "Active"], ["94%", "Close Rate"]].map(([v, l]) => (
-              <div key={l} className="rounded p-1.5" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="text-[9px] font-bold" style={{ color: accentColor }}>{v}</div>
-                <div className="h-1 w-7 rounded-full bg-white/10 mt-0.5" />
-              </div>
-            ))}
-          </div>
-          {/* Table */}
-          <div className="flex-1 rounded-lg overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
-            {/* Table header */}
-            <div className="grid grid-cols-3 px-2 py-1.5" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              {["Name", "Status", "Score"].map((h) => (
-                <div key={h} className="text-[7px] text-white/30 font-semibold uppercase">{h}</div>
-              ))}
-            </div>
-            {/* Rows */}
-            {rows.map((row, i) => (
-              <div
-                key={row.name}
-                className="grid grid-cols-3 items-center px-2 py-1.5 border-t border-white/[0.04]"
-                style={{ backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)" }}
-              >
-                <div className="flex items-center gap-1">
-                  <div className="h-3 w-3 rounded-full bg-white/15" />
-                  <div className="text-[7px] text-white/50">{row.name}</div>
-                </div>
-                <div className="px-1.5 py-0.5 rounded-full text-[6px] font-semibold w-fit" style={{ backgroundColor: statusColor[row.status] + "25", color: statusColor[row.status] }}>
-                  {row.status}
-                </div>
-                <div className="flex items-center gap-1">
-                  <div className="h-1 rounded-full flex-1" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                    <div className="h-full rounded-full" style={{ width: `${row.score}%`, backgroundColor: accentColor }} />
-                  </div>
-                  <div className="text-[7px]" style={{ color: accentColor }}>{row.score}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DirectoryMockup({ accentColor, darkBg }: { accentColor: string; darkBg: string }) {
-  const tools = ["ChatGPT", "Midjourney", "Notion AI", "Runway", "Perplexity", "Claude"];
-  const categories = ["All", "Writing", "Image", "Video", "Code"];
-
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: darkBg }}>
-      {/* Nav */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded-full" style={{ backgroundColor: accentColor + "60" }} />
-          <div className="h-2 w-14 rounded-full bg-white/20" />
-        </div>
-        {/* Search bar */}
-        <div className="flex items-center gap-1.5 px-2 py-1 rounded-md" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}>
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div className="text-[7px] text-white/25">⌘K Search tools...</div>
-        </div>
-        <div className="h-5 w-5 rounded-full bg-white/10" />
-      </div>
-      {/* Filter tabs */}
-      <div className="flex items-center gap-1.5 px-4 py-2 border-b border-white/5 overflow-hidden">
-        {categories.map((c, i) => (
-          <div key={c} className="px-2 py-0.5 rounded-full text-[7px] whitespace-nowrap" style={{ backgroundColor: i === 0 ? accentColor + "30" : "rgba(255,255,255,0.05)", color: i === 0 ? accentColor : "rgba(255,255,255,0.3)", border: i === 0 ? `1px solid ${accentColor}40` : "1px solid transparent" }}>
-            {c}
-          </div>
-        ))}
-      </div>
-      {/* Grid */}
-      <div className="flex-1 p-3 grid grid-cols-3 gap-2 overflow-hidden content-start">
-        {tools.map((tool, i) => (
-          <div
-            key={tool}
-            className="rounded-lg p-2 flex flex-col gap-1.5"
-            style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
-          >
-            <div className="flex items-center justify-between">
-              <div className="h-5 w-5 rounded-md" style={{ backgroundColor: accentColor + (i % 2 === 0 ? "40" : "20") }} />
-              <div className="h-3 w-3 rounded-full bg-white/5 flex items-center justify-center">
-                <div className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: i < 2 ? accentColor : "rgba(255,255,255,0.2)" }} />
-              </div>
-            </div>
-            <div className="text-[7px] font-semibold text-white/60">{tool}</div>
-            <div className="h-1 w-full rounded-full bg-white/10" />
-            <div className="h-1 w-3/4 rounded-full bg-white/5" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+// ─── Personal project mockup — real screenshot ────────────────────────────────
 
 function PersonalMockup({ project }: { project: PersonalProject }) {
   return (
-    <div className="flex flex-col rounded-xl overflow-hidden border border-white/10 shadow-xl h-44">
+    <div className="flex flex-col rounded-xl overflow-hidden border border-border shadow-xl">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 flex-shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-        <span className="h-2 w-2 rounded-full bg-red-400/70" />
-        <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
-        <span className="h-2 w-2 rounded-full bg-green-400/70" />
-        <div className="ml-2 flex-1 rounded-md px-2 py-0.5 flex items-center gap-1.5" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.08)" }}>
-          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <span className="text-[9px] font-mono" style={{ color: "rgba(255,255,255,0.35)" }}>
+      <div className="flex items-center gap-2 bg-muted px-3 py-2 border-b border-border flex-shrink-0">
+        <span className="h-2 w-2 rounded-full bg-red-400/80" />
+        <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
+        <span className="h-2 w-2 rounded-full bg-green-400/80" />
+        <div className="ml-2 flex-1 rounded-md bg-background/60 border border-border px-2 py-0.5 flex items-center gap-1.5">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-green-500 flex-shrink-0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span className="text-[9px] font-mono text-muted-foreground truncate">
             {project.liveUrl.replace("https://", "")}
           </span>
         </div>
       </div>
-      {/* App preview */}
-      <div className="flex-1 overflow-hidden">
-        {project.mockupType === "dashboard" && <DashboardMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
-        {project.mockupType === "crm"       && <CRMMockup       accentColor={project.accentColor} darkBg={project.darkBg} />}
-        {project.mockupType === "directory" && <DirectoryMockup accentColor={project.accentColor} darkBg={project.darkBg} />}
+      {/* App preview — real screenshot, sized to actually show the design */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-muted">
+        <Image
+          src={project.image}
+          alt={`${project.name} — ${project.tagline} screenshot`}
+          fill
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+          className="object-contain"
+        />
       </div>
     </div>
   );
@@ -738,18 +321,18 @@ function PersonalProjectCard({ project }: { project: PersonalProject }) {
         {/* About */}
         <p className="text-sm text-muted-foreground leading-relaxed">{project.about}</p>
 
-        {/* Highlights */}
-        <ul className="flex flex-col gap-1.5 flex-1">
-          {project.highlights.map((h) => (
-            <li key={h} className="flex items-start gap-2 text-xs text-muted-foreground">
-              <span
-                className="mt-1.5 h-1 w-1 rounded-full flex-shrink-0"
-                style={{ backgroundColor: project.accentColor }}
-              />
-              {h}
-            </li>
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 flex-1 content-start">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-1 text-[11px] font-semibold"
+              style={{ backgroundColor: `${project.accentColor}12`, color: project.accentColor }}
+            >
+              {tag}
+            </span>
           ))}
-        </ul>
+        </div>
 
         {/* Stack */}
         <div className="flex flex-wrap gap-1.5 pt-1">

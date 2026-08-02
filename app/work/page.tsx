@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FilterTabs } from "./filter-tabs";
 import { PersonalProjectCards } from "./project-cards";
 import { WhatsAppLink } from "@/components/whatsapp-link";
@@ -54,7 +55,7 @@ export default function WorkPage() {
 
 function WorkHero() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
+    <section className="relative overflow-hidden py-20 md:py-28">
       {/* Background blobs */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-background" />
@@ -70,37 +71,140 @@ function WorkHero() {
       </div>
 
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-            Our Work
-          </span>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* ── Left: text content ── */}
+          <div className="flex flex-col items-center text-center gap-6 lg:items-start lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-4 py-1.5 text-xs font-semibold text-brand">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
+              Our Work
+            </span>
 
-          <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Real Websites.{" "}
-            <span className="text-brand">Real Results.</span>
-          </h1>
+            <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Real Websites.{" "}
+              <span className="text-brand">Real Results.</span>
+            </h1>
 
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Every project here started with a business that needed a stronger online presence.
-            Here's how we built it — and what happened next.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Every project here started with a business that needed a stronger online presence.
+              Here's how we built it — and what happened next.
+            </p>
 
-          <div className="mt-4 flex flex-wrap justify-center gap-8">
-            {[
-              { value: "6+", label: "Projects Shipped" },
-              { value: "100%", label: "On-Time Delivery" },
-              { value: "4.9★", label: "Client Rating" },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1">
-                <span className="font-heading text-3xl font-extrabold text-brand">{stat.value}</span>
-                <span className="text-xs text-muted-foreground font-medium">{stat.label}</span>
-              </div>
-            ))}
+            <div className="mt-2 flex flex-wrap justify-center gap-8 lg:justify-start">
+              {[
+                { value: "15+", label: "Projects Shipped" },
+                { value: "100%", label: "On-Time Delivery" },
+                { value: "4.9★", label: "Client Rating" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center gap-1 lg:items-start">
+                  <span className="font-heading text-3xl font-extrabold text-brand">{stat.value}</span>
+                  <span className="text-xs text-muted-foreground font-medium">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Right: floating real-project cards ── */}
+          <div className="group relative flex items-center justify-center lg:justify-end min-h-[380px] sm:min-h-[440px]">
+            {/* Floating industry pills */}
+            <HeroFloatingPill label="Healthcare" style={{ top: "4%", left: "0%", animationDelay: "0.3s" }} />
+            <HeroFloatingPill label="Beauty & Wellness" style={{ top: "10%", right: "2%", animationDelay: "1.2s" }} />
+            <HeroFloatingPill label="Food & Export" style={{ bottom: "10%", left: "-2%", animationDelay: "0.7s" }} />
+
+            {/* Back card — Malabar Reserve */}
+            <div
+              className="absolute w-[260px] sm:w-[300px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card rotate-[8deg] translate-x-[56px] translate-y-[40px] transition-transform duration-500 ease-out group-hover:rotate-[12deg] group-hover:translate-x-[92px] group-hover:translate-y-[62px]"
+              style={{ zIndex: 1 }}
+              aria-hidden="true"
+            >
+              <HeroPreviewCard
+                image="/work/malabar-reserve.webp"
+                url="malabarreserve.co"
+                name="Malabar Reserve"
+                industry="Food & Export"
+                accent="#C9A227"
+              />
+            </div>
+
+            {/* Front card — Velour Studios */}
+            <div
+              className="relative w-[260px] sm:w-[300px] rounded-2xl overflow-hidden shadow-2xl border border-border bg-card rotate-[-3deg] transition-transform duration-500 ease-out group-hover:rotate-[-6deg] group-hover:-translate-x-[10px] group-hover:translate-y-[6px]"
+              style={{ zIndex: 2 }}
+            >
+              <HeroPreviewCard
+                image="/work/velour-studios.webp"
+                url="velourstudios.vercel.app"
+                name="Velour Studios"
+                industry="Beauty & Wellness"
+                accent="#D946EF"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroFloatingPill({ label, style }: { label: string; style: React.CSSProperties }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="absolute z-10 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground shadow-md animate-float"
+      style={style}
+    >
+      {label}
+    </span>
+  );
+}
+
+function HeroPreviewCard({
+  image,
+  url,
+  name,
+  industry,
+  accent,
+}: {
+  image: string;
+  url: string;
+  name: string;
+  industry: string;
+  accent: string;
+}) {
+  return (
+    <div className="flex flex-col">
+      {/* Browser chrome */}
+      <div className="flex items-center gap-2 bg-muted px-3 py-2.5 border-b border-border">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+        <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+        <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+        <div className="ml-2 flex-1 rounded-md bg-background/60 border border-border px-2.5 py-1 flex items-center gap-1.5">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-green-500 flex-shrink-0" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+          <span className="text-[10px] text-muted-foreground truncate font-mono">{url}</span>
+        </div>
+      </div>
+
+      {/* Real screenshot */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-muted">
+        <Image
+          src={image}
+          alt={`${name} — real project screenshot`}
+          fill
+          sizes="300px"
+          className="object-contain"
+        />
+      </div>
+
+      {/* Footer */}
+      <div className="bg-card px-4 py-3 flex items-center justify-between border-t border-border">
+        <div>
+          <p className="text-xs font-semibold text-foreground">{name}</p>
+          <p className="text-[10px] text-muted-foreground">{industry}</p>
+        </div>
+        <div className="h-6 w-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0" style={{ backgroundColor: accent }}>
+          ↗
+        </div>
+      </div>
+    </div>
   );
 }
 
