@@ -125,7 +125,7 @@ function MarqueeSection() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-64px)] overflow-hidden flex items-center">
+    <section className="relative min-h-[560px] overflow-hidden flex items-center">
       {/* ── Animated gradient mesh background ── */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         {/* Base warm background */}
@@ -146,8 +146,8 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-[clamp(2.5rem,1rem+5vh,6rem)] md:px-8">
+        <div className="grid items-center gap-12 xl:grid-cols-2 xl:gap-16">
 
           {/* ── Left: Text content ── */}
           <div className="flex flex-col gap-7">
@@ -160,7 +160,7 @@ function HeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] xl:text-6xl">
+            <h1 className="font-heading text-[clamp(2.25rem,1.5rem+3vw,3.75rem)] [@media(max-height:760px)]:text-[clamp(1.875rem,1.25rem+2.5vw,2.75rem)]! font-extrabold leading-[1.1] tracking-tight text-foreground">
               We Build Websites That Make Your Business{" "}
               <span className="relative inline-block">
                 <span className="text-brand">Impossible to Ignore</span>
@@ -220,13 +220,13 @@ function HeroSection() {
           </div>
 
           {/* ── Right: Floating browser mockup cards ── */}
-          <div className="group relative flex items-center justify-center lg:justify-end min-h-[420px]">
+          <div className="group relative flex items-center justify-center xl:justify-end min-h-[420px] [@media(max-height:760px)]:min-h-[320px]!">
 
             {/* Floating tech pill badges */}
-            <FloatingPill label="Next.js" color="bg-foreground text-background" style={{ top: "6%", left: "2%", animationDelay: "0s" }} />
-            <FloatingPill label="React" color="bg-[#61DAFB]/15 text-[#0ea5e9] border border-[#61DAFB]/30" style={{ top: "12%", right: "0%", animationDelay: "1s" }} />
-            <FloatingPill label="Tailwind CSS" color="bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30" style={{ bottom: "8%", left: "0%", animationDelay: "2s" }} />
-            <FloatingPill label="TypeScript" color="bg-[#3178C6]/15 text-[#3178C6] border border-[#3178C6]/30" style={{ bottom: "18%", right: "2%", animationDelay: "0.5s" }} />
+            <FloatingPill label="Next.js" color="bg-foreground text-background" style={{ top: "6%", left: "6%", animationDelay: "0s" }} />
+            <FloatingPill label="React" color="bg-[#61DAFB]/15 text-[#0ea5e9] border border-[#61DAFB]/30" style={{ top: "12%", right: "4%", animationDelay: "1s" }} />
+            <FloatingPill label="Tailwind CSS" color="bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30" style={{ bottom: "8%", left: "4%", animationDelay: "2s" }} />
+            <FloatingPill label="TypeScript" color="bg-[#3178C6]/15 text-[#3178C6] border border-[#3178C6]/30" style={{ bottom: "18%", right: "6%", animationDelay: "0.5s" }} />
 
             {/* Card 2 — back (Velour Studios) */}
             <div
